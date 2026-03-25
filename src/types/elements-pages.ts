@@ -6,12 +6,12 @@ export type User = {
     nombre: string;
     email: string;
     phone: string;
-    rangoEtareo: string[]
-    titulo?: "Acompañante terapéutico" | "Licenciadx" | "Tecnicx" | "Tecnicx Superior";
-    disponible: boolean;
-    imagenPerfil: string;
-    imagenTitulo: string;
     rol: "admin" | "profesional" | "usuario"
+    disponible: boolean;
+    rangoEtareo?: string[]
+    titulo?: "Acompañante terapéutico" | "Licenciadx" | "Tecnicx" | "Tecnicx Superior";
+    imagenPerfil?: string;
+    imagenTitulo?: string;
 }
 
 export type Case = {

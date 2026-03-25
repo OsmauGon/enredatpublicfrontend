@@ -10,7 +10,9 @@ const cerrarNav = () =>{
 }
 export const Haeder = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark greenbackground">
+    <header>
+        
+    <nav className="navbar navbar-expand-lg navbar-dark ">
         <div className="container">
             <Link to={'/'}><img src="/img/headerLogo.png" alt="" className="navbar-brand" /></Link>
             
@@ -32,5 +34,6 @@ export const Haeder = () => {
             </div>
         </div>
     </nav>
+    </header>
   )
 }

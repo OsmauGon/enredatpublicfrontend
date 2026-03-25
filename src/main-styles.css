@@ -1,0 +1,52 @@
+:root{
+    --verdeDELlogo: #2F9597;
+    --naranjaDELlogo: #E58A55;
+    --blancoDELlogo: #FBF6F3;
+    --gradianteVerde: linear-gradient(to right, var(--verdeDELlogo), #00cc99);
+    --gradianteVerdeInvertido: linear-gradient(to left, var(--verdeDELlogo), #00cc99);
+}
+body {
+    font-family: Arial, sans-serif;
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header{
+    background: linear-gradient(to right, var(--verdeDELlogo), #00cc99);  
+   
+}
+
+header img{
+    width: 162px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+main{
+    flex: 1;
+    
+}
+main section{
+    background-color: var(--blancoDELlogo);
+}
+main section h2{
+    margin: 0;
+}
+footer{
+    background: var(--gradianteVerde);
+    color: var(--blancoDELlogo);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+

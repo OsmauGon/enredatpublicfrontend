@@ -1,9 +1,12 @@
 import React from 'react'
+import UnderConstruction from '../components/reusables/UnderConstruction'
 
-type Props = {}
 
-export const PageHome = (props: Props) => {
+export const PageHome = () => {
   return (
-    <div>PageHome</div>
+    <section>
+        <h2>PageHome</h2>
+        <UnderConstruction />
+    </section>
   )
 }
