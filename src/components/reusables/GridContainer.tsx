@@ -1,16 +1,21 @@
+import '../../styles/grid-container.css'
 import type { User } from "../../types/elements-pages"
 
+
 interface GridContainerProps {
-  items: User[]
+  items: User[];
+  setMockobject: (val: User | null)=>void
 }
 
-export const GridContainer: React.FC<GridContainerProps> = ({ items }) => {
+export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobject }) => {
   return (
     <div className="grid-container">
       {items.map(item => (
         <div key={item.id} className="grid-item">
-          <p>{item.nombre}</p>
-          <p>{item.rol}</p>
+          <img className={`grid-item-img ${item.disponible ? "" : "nodisponible"}`} src={item.imagenPerfil} alt="" />
+          <h5 className='grid-item-title'>{item.nombre}</h5>
+          <p>{item.disponible ? "disponible" : "ocupado"}</p>
+          <button className='grid-item-button' onClick={()=>{setMockobject(item)}}>Conectar</button>
         </div>
       ))}
     </div>

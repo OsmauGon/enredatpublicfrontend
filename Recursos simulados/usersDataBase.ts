@@ -8,7 +8,7 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user1.png",
+        imagenPerfil: "/Recursos simulados/File Container/user1.png",
         imagenTitulo: "titulo.jpg",
         rol: "admin",
         titulo: "Acompañante terapéutico"
@@ -21,7 +21,7 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user2.png",
+        imagenPerfil: "/Recursos simulados/File Container/user2.png",
         imagenTitulo: "titulo.jpg",
         rol: "profesional",
         titulo: "Licenciadx"
@@ -34,7 +34,7 @@ export const allusers: User[] = [
         disponible: false,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user3.webp",
+        imagenPerfil: "/Recursos simulados/File Container/user3.webp",
         imagenTitulo: "titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx"
@@ -47,7 +47,7 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user4.png",
+        imagenPerfil: "/Recursos simulados/File Container/user4.png",
         imagenTitulo: "titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx Superior"
@@ -60,7 +60,7 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user5.png",
+        imagenPerfil: "/Recursos simulados/File Container/user5.png",
         imagenTitulo: "titulo.jpg",
         rol: "profesional",
         titulo: "Acompañante terapéutico"
@@ -73,7 +73,7 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user6.jpeg",
+        imagenPerfil: "/Recursos simulados/File Container/user6.jpeg",
         imagenTitulo: "titulo.jpg",
         rol: "profesional",
         titulo: "Licenciadx"
@@ -86,7 +86,7 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user7.png",
+        imagenPerfil: "/Recursos simulados/File Container/user7.png",
         imagenTitulo: "titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx"
@@ -99,7 +99,7 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "user8.png",
+        imagenPerfil: "/Recursos simulados/File Container/user8.png",
         imagenTitulo: "titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx Superior"

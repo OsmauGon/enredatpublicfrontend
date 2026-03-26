@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import UnderConstruction from '../components/reusables/UnderConstruction'
 import type { User } from '../types/elements-pages'
 import {allusers} from '../../Recursos simulados/usersDataBase'
 import {GridContainer} from '../components/reusables/GridContainer'
+import { MockObject } from '../components/reusables/MockObject'
+import { FilterBar } from '../components/reusables/FilterBar'
 
 
 
@@ -10,6 +11,7 @@ export const PageAco = () => {
   const [acompas, setAcompas] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [mockobjet,setMockobjet] = useState<User | null>(null)
 
   useEffect(() => {
     const fetchProfesionales = async () => {
@@ -38,9 +40,11 @@ export const PageAco = () => {
   return (
     <section>
       <h2>PageAco</h2>
+      <FilterBar></FilterBar>
       {loading && <p>Cargando...</p>}
       {error && <p>{error}</p>}
-      {acompas.length > 0 && <GridContainer items={acompas} />}
+      {acompas.length > 0 && <GridContainer items={acompas} setMockobject={setMockobjet}/>}
+      {mockobjet && <MockObject item={mockobjet} setMockobject={setMockobjet}></MockObject>}
     </section>
   )
 }

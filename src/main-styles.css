@@ -34,6 +34,7 @@ main section{
 main section h2{
     margin: 0;
 }
+
 footer{
     background: var(--gradianteVerde);
     color: var(--blancoDELlogo);
