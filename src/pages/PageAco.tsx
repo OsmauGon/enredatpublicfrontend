@@ -12,6 +12,20 @@ export const PageAco = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [mockobjet,setMockobjet] = useState<User | null>(null)
+  const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
+  
+  const registrosFiltrados = acompas.filter((r) => {
+    const matchNombre = r.nombre
+      .toLowerCase()
+      .includes(filtros.nombre.toLowerCase());
+    const matchDisponible = filtros.disponible ? r.disponible : true;
+    return matchNombre && matchDisponible;
+  });
+
+
+
+
+
 
   useEffect(() => {
     const fetchProfesionales = async () => {
@@ -40,10 +54,10 @@ export const PageAco = () => {
   return (
     <section>
       <h2>PageAco</h2>
-      <FilterBar></FilterBar>
+      <FilterBar filtros={filtros} onChange={setFiltros}></FilterBar>
       {loading && <p>Cargando...</p>}
       {error && <p>{error}</p>}
-      {acompas.length > 0 && <GridContainer items={acompas} setMockobject={setMockobjet}/>}
+      {registrosFiltrados.length > 0 && <GridContainer items={registrosFiltrados} setMockobject={setMockobjet}/>}
       {mockobjet && <MockObject item={mockobjet} setMockobject={setMockobjet}></MockObject>}
     </section>
   )

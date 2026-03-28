@@ -15,7 +15,7 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
           <img className={`grid-item-img ${item.disponible ? "" : "nodisponible"}`} src={item.imagenPerfil} alt="" />
           <h5 className='grid-item-title'>{item.nombre}</h5>
           <p>{item.disponible ? "disponible" : "ocupado"}</p>
-          <button className='grid-item-button' onClick={()=>{setMockobject(item)}}>Conectar</button>
+          <button className='grid-item-button' disabled={!item.disponible} onClick={()=>{setMockobject(item)}}>{item.disponible ? "Conectar" : "Ocupado"}</button>
         </div>
       ))}
     </div>

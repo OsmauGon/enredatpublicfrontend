@@ -1,21 +1,74 @@
+@import '../../src/main-styles.css';
+
 .mockobject{
     position: fixed;
     z-index: 10;
     top: 0;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .8);
     color: white;
-    font-size: 36px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
 .mockobject-button{
     outline: none;
-    border: 2px solid green;
+    border: 2px solid var(--verdeDELlogo);
     border-radius: 50px;
     padding: 5px 8px;
-    background-color: transparent;
+    margin-bottom: 5px;
+    background-color: var(--verdeDELlogo);
     color: white;
     font-size: 18px;
     display: block;
 }
+
+
+
+
+
+
+/*
+.mockobject-content{
+    width: 800px;
+    margin: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.mockobject-info{
+    background-color: red;
+    width: 45%;
+}
+.mockobject-images{
+    display: flex;
+    width: 45%;
+}
+.mockobject-images img{
+    width: 200px;
+    height: 200px;
+    object-position: center;
+}
+    */
+
+    .mockobject img{
+        margin-top: 10px;
+        border-radius: 8px;
+        width: 400px;
+        height: 210px;
+        object-position: center;
+    }
+    .mockobject img:hover{
+        object-position:unset;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        transition: .3s;
+    }

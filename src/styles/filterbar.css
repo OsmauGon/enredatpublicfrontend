@@ -1,0 +1,33 @@
+@import '../main-styles.css';
+
+.filterBar{
+    min-width: 380px;
+    width: 50%;
+    background: linear-gradient(to right, var(--verdeDELlogo), #00cc99); 
+    margin: 5px auto;
+    padding: 8px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.filterBar svg{
+    color: var(--blancoDELlogo);
+}
+.filterBar label{
+    color: var(--blancoDELlogo);
+}
+.filterBar input{
+    border: none;
+    border-bottom: 3px solid var(--blancoDELlogo);
+    background-color: transparent;
+
+}
+.filterBar input:focus {
+  outline: none;
+}
+
+.filterBar input::placeholder{
+    color: var(--blancoDELlogo);
+}
+

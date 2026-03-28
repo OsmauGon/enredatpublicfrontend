@@ -9,7 +9,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user1.png",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "admin",
         titulo: "Acompañante terapéutico"
     },
@@ -22,7 +22,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user2.png",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Licenciadx"
     },
@@ -35,7 +35,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user3.webp",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx"
     },
@@ -48,7 +48,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user4.png",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx Superior"
     },
@@ -61,7 +61,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user5.png",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Acompañante terapéutico"
     },
@@ -74,7 +74,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user6.jpeg",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Licenciadx"
     },
@@ -87,7 +87,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user7.png",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx"
     },
@@ -100,7 +100,7 @@ export const allusers: User[] = [
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
         imagenPerfil: "/Recursos simulados/File Container/user8.png",
-        imagenTitulo: "titulo.jpg",
+        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx Superior"
     },
