@@ -22,7 +22,7 @@ export const Haeder = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav ms-auto">
                     
-                    <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/ats">Acompañantes terapéuticos</Link> </li>
+                    <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/ats">Acompañantes</Link> </li>
                     <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/casos">Casos</Link></li>
                     <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/comunidad">Comunidad</Link></li>
                     <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/infoutil">InfoUtil</Link> </li>

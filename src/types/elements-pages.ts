@@ -10,12 +10,22 @@ export type User = {
     disponible: boolean;
     rangoEtareo?: string[]
     titulo?: "Acompañante terapéutico" | "Licenciadx" | "Tecnicx" | "Tecnicx Superior";
-    imagenPerfil?: string;
-    imagenTitulo?: string;
+    profileImage?: string;
+    mainImage?: string;
 }
 
 export type Case = {
     id: number;
     idDueño: number;
     estado: "habilitado" | "en espera" | "rechazado"
+    disponible: boolean;
+
+    dx: string;
+    tipoPaciente: "Niñx" | "Adolecente" | "Adulto" | "Adulto mayor";
+    edad: number;
+    contacto: string[];
+    solicitud: string;
+    covertura: string;
+    franjahoraria: string;
+
 }

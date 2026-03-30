@@ -8,8 +8,8 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user1.png",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user1.png",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "admin",
         titulo: "Acompañante terapéutico"
     },
@@ -21,8 +21,8 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user2.png",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user2.png",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Licenciadx"
     },
@@ -34,8 +34,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user3.webp",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user3.webp",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx"
     },
@@ -47,8 +47,8 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user4.png",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user4.png",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx Superior"
     },
@@ -60,8 +60,8 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user5.png",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user5.png",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Acompañante terapéutico"
     },
@@ -73,8 +73,8 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user6.jpeg",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user6.jpeg",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Licenciadx"
     },
@@ -86,8 +86,8 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user7.png",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user7.png",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx"
     },
@@ -99,8 +99,8 @@ export const allusers: User[] = [
         disponible: true,
         estado: "habilitado",
         rangoEtareo: ["Niñx"],
-        imagenPerfil: "/Recursos simulados/File Container/user8.png",
-        imagenTitulo: "/Recursos simulados/File Container/titulo.jpg",
+        profileImage: "/Recursos simulados/File Container/user8.png",
+        mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
         titulo: "Tecnicx Superior"
     },
@@ -112,8 +112,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "en espera",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     },
     {
@@ -124,8 +124,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "en espera",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     },
     {
@@ -136,8 +136,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "en espera",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     },
     {
@@ -148,8 +148,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "en espera",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     },
     {
@@ -160,8 +160,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "en espera",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     },
     {
@@ -172,8 +172,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "en espera",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     },
     {
@@ -184,8 +184,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "en espera",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     },
     {
@@ -196,8 +196,8 @@ export const allusers: User[] = [
         disponible: false,
         estado: "habilitado",
         rangoEtareo: undefined,
-        imagenPerfil: undefined,
-        imagenTitulo: undefined,
+        profileImage: undefined,
+        mainImage: undefined,
         rol: "usuario"
     }
 ]

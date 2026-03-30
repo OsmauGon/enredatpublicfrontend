@@ -1,20 +1,37 @@
 import '../../styles/grid-container.css'
-import type { User } from "../../types/elements-pages"
+import type { Case, User } from "../../types/elements-pages"
 
 
-interface GridContainerProps {
-  items: User[];
-  setMockobject: (val: User | null)=>void
+type GridContainerProps = {
+  items: User[] | Case[];
+  setMockobject: (val: User | Case | null)=>void
 }
 
 export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobject }) => {
+  const nameAdapter = (name: string, titl: string)=>{
+    return `${titl[0]}${titl[1]}${titl[2]}. ${name}`
+  }
   return (
     <div className="grid-container">
       {items.map(item => (
         <div key={item.id} className="grid-item">
-          <img className={`grid-item-img ${item.disponible ? "" : "nodisponible"}`} src={item.imagenPerfil} alt="" />
-          <h5 className='grid-item-title'>{item.nombre}</h5>
-          <p>{item.disponible ? "disponible" : "ocupado"}</p>
+          {"profileImage" in item && (<img className={`grid-item-img ${item.disponible ? "" : "nodisponible"}`} src={item.profileImage} alt="" />)}
+          {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
+          {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
+          <div className="grid-item-content">
+            {"nombre" in item && "titulo" in item && (<h5 className='grid-item-title'>{nameAdapter(item.nombre,item.titulo ? item.titulo : "")}</h5>)}
+            {"tipoPaciente" in item && "edad" in item && (<h4 className='grid-item-title'>{item.tipoPaciente} de {item.edad} años</h4>)}
+            
+            
+            {/*<p>{item.disponible ? "disponible" : "ocupado"}</p>*/}
+            {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
+            {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
+            {"covertura" in item && ( <>
+              <p>Dx: {item.dx}</p>
+              <p>Covertura: {item.covertura.split("-")[0]}</p>
+              </>)}
+          </div>
+
           <button className='grid-item-button' disabled={!item.disponible} onClick={()=>{setMockobject(item)}}>{item.disponible ? "Conectar" : "Ocupado"}</button>
         </div>
       ))}

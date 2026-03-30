@@ -1,5 +1,5 @@
 // CarnetUsuario.tsx
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography, Avatar } from "@mui/material";
 
 interface CarnetUsuarioProps {
@@ -20,16 +20,17 @@ const CarnetUsuario: React.FC<CarnetUsuarioProps> = ({
   contacto,
   fotoUsuario,
 }) => {
+  const [view,setView] = useState<boolean>(false)
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "row",
-        border: "1px solid #ccc",
+        border: "4px double white",
         borderRadius: "8px",
         padding: 1,
         width: 400,
-        backgroundColor: "#ccc",
+        backgroundColor: "#2F9597",
       }}
     >
       {/* Columna izquierda */}
@@ -50,10 +51,14 @@ const CarnetUsuario: React.FC<CarnetUsuarioProps> = ({
       <Box sx={{ marginLeft: 2, width: "60%" }}>
         <Typography variant="h5">{nombre}</Typography>
         <Typography variant="subtitle1" color="text.secondary">{titulo}</Typography>
-        <Typography variant="body2">{especialidad}</Typography>
-        <Typography variant="body2">Tel: {telefono}</Typography>
-        <Typography variant="body2">Contacto: {contacto}</Typography>
-      </Box>
+        <Typography variant="body1">Aréa: {especialidad?.join("-")}</Typography>
+        {view ? <>
+                  <Typography variant="body1">Tel: {telefono}</Typography>
+                  <Typography variant="body1">Contacto: {contacto}</Typography>
+                </>
+              : <button className="btn btn-warning" onClick={()=>{setView(!view)}}>Ver contacto</button>
+        }
+        </Box>
     </Box>
   );
 };

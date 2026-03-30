@@ -10,7 +10,7 @@ section .grid-container {
 section .grid-container .grid-item {
   aspect-ratio: 1 / 1; /* asegura que sea cuadrado */
   width: 100%;         /* ocupa todo el ancho de la celda */
-  background-color: var(--verdeDELlogo);
+  background-color: #00cc99;
   border: 1px solid #ccc;
   border-radius: 10px;
   position: relative;
@@ -37,9 +37,20 @@ opacity: 0;
 .nodisponible{
   filter: grayscale(1);
 }
-.grid-item h5{
-  padding: 5px;
+.grid-item-content{
+  padding: 8px;
 }
+.grid-item-content p{
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+
+
+
 .grid-item .grid-item-button{
   background-color: var(--naranjaDELlogo);
   border: 2px solid var(--naranjaDELlogo);
