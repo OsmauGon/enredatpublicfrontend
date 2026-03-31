@@ -1,10 +1,10 @@
 import '../../styles/grid-container.css'
-import type { Case, User } from "../../types/elements-pages"
+import type { Case, Event, User } from "../../types/elements-pages"
 
 
 type GridContainerProps = {
-  items: User[] | Case[];
-  setMockobject: (val: User | Case | null)=>void
+  items: User[] | Case[] | Event[];
+  setMockobject: (val: User | Case | Event | null)=>void
 }
 
 export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobject }) => {
@@ -29,6 +29,12 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
             {"covertura" in item && ( <>
               <p>Dx: {item.dx}</p>
               <p>Covertura: {item.covertura.split("-")[0]}</p>
+              </>)}
+            {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
+            {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
+            {"description" in item && ( <>
+              <h5>Dx: {item.titulo}</h5>
+              {/* <img className='mini-image' src={item.mainImage} alt="Evento" /> */}
               </>)}
           </div>
 

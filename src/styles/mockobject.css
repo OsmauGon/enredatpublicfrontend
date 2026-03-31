@@ -63,6 +63,7 @@
         border-radius: 8px;
         width: 400px;
         height: 210px;
+        object-fit: cover;
         object-position: center;
     }
     .mockobject img:hover{
@@ -70,5 +71,5 @@
         width: 100%;
         max-width: 500px;
         height: auto;
-        transition: .3s;
+        transition: 1s;
     }

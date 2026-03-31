@@ -29,3 +29,16 @@ export type Case = {
     franjahoraria: string;
 
 }
+
+export type Event = {
+    id: number;
+    idDueño: number;
+    estado: "habilitado" | "en espera" | "rechazado"
+    disponible: boolean;
+
+    titulo: string;
+    mainImage: string;
+    startDate: string;
+    endDate: string;
+    description: string;
+}

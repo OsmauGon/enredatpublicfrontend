@@ -11,7 +11,7 @@ export const PageAco = () => {
   const [acompas, setAcompas] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [mockobjet,setMockobjet] = useState<User | Case | null>(null)
+  const [mockobjet,setMockobjet] = useState<User | Case | Event | null>(null)
   const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
   
   const registrosFiltrados = acompas.filter((r) => {
