@@ -68,6 +68,8 @@
     }
     .mockobject img:hover{
         object-position:unset;
+        position: relative;
+        transform: translateY(-30%);
         width: 100%;
         max-width: 500px;
         height: auto;

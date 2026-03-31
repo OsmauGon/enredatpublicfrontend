@@ -33,8 +33,8 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
             {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
             {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
             {"description" in item && ( <>
-              <h5>Dx: {item.titulo}</h5>
-              {/* <img className='mini-image' src={item.mainImage} alt="Evento" /> */}
+              <h5>{item.titulo}</h5>
+              <img className={`mini-image ${item.disponible ? "" : 'nodisponible'}`} src={item.mainImage} alt="Evento" />
               </>)}
           </div>
 

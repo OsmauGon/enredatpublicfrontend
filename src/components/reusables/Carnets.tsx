@@ -53,10 +53,6 @@ export const EventCarnet = (props: EventProps) => {
         backgroundColor: "#2F9597",
       }}
     >
-        <p><b>Id: </b>{props.props.id}</p>
-        <p><b>Responsable: </b>{props.props.idDueño}</p>
-        <p><b>Estado: </b>{props.props.estado}</p>
-        <p><b>Disponible: </b>{props.props.disponible ? 'Disponible' : 'Tomado'}</p>
         <p><b>Inicio: </b>{props.props.startDate}</p>
         <p><b>Cierre: </b>{props.props.endDate}</p>
         <p><b>Disponible: </b>{props.props.description}</p>

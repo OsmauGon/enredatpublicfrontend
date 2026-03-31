@@ -17,7 +17,7 @@ export const MockObject: React.FC<GridContainerProps> = ({ item, setMockobject }
         <button className='mockobject-button' onClick={()=> setMockobject(null)}>⬅️ Volver</button>
         
         {
-          "titulo" in item && ( //objeto User
+          "nombre" in item && ( //objeto User
                                 <CarnetUsuario nombre={item.nombre}
                                 titulo={item.titulo}
                                 especialidad={item.rangoEtareo}

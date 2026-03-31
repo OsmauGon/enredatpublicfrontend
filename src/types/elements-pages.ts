@@ -27,7 +27,6 @@ export type Case = {
     solicitud: string;
     covertura: string;
     franjahoraria: string;
-
 }
 
 export type Event = {
@@ -41,4 +40,15 @@ export type Event = {
     startDate: string;
     endDate: string;
     description: string;
+}
+
+export type Info = {
+    id: number;
+    idDueño: number;
+    estado: "habilitado" | "en espera" | "rechazado"
+
+    titulo: string;
+    subtitulos: string[];
+    textos: string[];
+    infoType: "lista" | "no-lista"
 }
