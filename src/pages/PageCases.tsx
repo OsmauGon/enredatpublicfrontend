@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import type {Case, Event, User} from '../types/elements-pages'
+import type {Case, Event, Info, User} from '../types/elements-pages'
 import {allcases} from '../../Recursos simulados/casesDataBase'
 import {GridContainer} from '../components/reusables/GridContainer'
 import { MockObject } from '../components/reusables/MockObject'
@@ -11,7 +11,8 @@ export const PageCases = () => {
 const [cases, setCases] = useState<Case[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [mockobjet,setMockobjet] = useState<User |Case | null | Event>(null)
+  
+      const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
   const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
 
   const registrosFiltrados = cases.filter((r) => {

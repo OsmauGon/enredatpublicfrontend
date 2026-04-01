@@ -1,13 +1,13 @@
 import React from 'react'
 import '../../styles/mockobject.css'
-import type { Case, Event, User } from '../../types/elements-pages';
+import type { Case, Event, Info, User } from '../../types/elements-pages';
 import CarnetUsuario from './CarnetUsuario';
-import { CaseCarnet, EventCarnet } from './Carnets';
+import { CaseCarnet, EventCarnet, InfoCarnet } from './Carnets';
 
 
 
 type GridContainerProps = {
-  item: User | Case | Event;
+  item: User | Case | Event | Info;
   setMockobject: (val: null)=>void
 }
 
@@ -29,14 +29,13 @@ export const MockObject: React.FC<GridContainerProps> = ({ item, setMockobject }
                               )
         }
         {"dx" in item && ( //objeto Case
-          <CaseCarnet props={item}/>
-        )
-        }
+          <CaseCarnet props={item}/>)}
         {"description" in item && ( //objeto Event
-          <EventCarnet props={item}/>
-        )
-
-        }
+          <EventCarnet props={item}/>)}
+        {"subtitulos" in item && (
+          <InfoCarnet props={item}/>
+        )}
+        
         {"mainImage" in item && (<img src={item.mainImage} alt="titulo" />)}
           
     </div>

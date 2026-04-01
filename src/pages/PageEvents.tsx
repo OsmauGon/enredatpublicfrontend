@@ -3,14 +3,14 @@ import {allevents} from '../../Recursos simulados/eventsDataBase'
 import {GridContainer} from '../components/reusables/GridContainer'
 import { MockObject } from '../components/reusables/MockObject'
 import { FilterBar } from '../components/reusables/FilterBar'
-import type { Case, Event, User } from '../types/elements-pages'
+import type { Case, Event, Info, User } from '../types/elements-pages'
 
 
 export const PageEvents = () => {
   const [events, setEvents] = useState<Event[]>([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
-    const [mockobjet,setMockobjet] = useState<User | Case | Event | null>(null)
+    const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
     const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
     
     const registrosFiltrados = events.filter((r) => {

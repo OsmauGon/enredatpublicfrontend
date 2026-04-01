@@ -1,12 +1,15 @@
 
 import { Box } from '@mui/material'
-import type { Case, Event } from '../../types/elements-pages'
+import type { Case, Event, Info } from '../../types/elements-pages'
 
 type CaseProps = {
     props: Case
 }
 type EventProps = {
   props: Event
+}
+type InfoProps = {
+  props: Info
 }
 
 export const CaseCarnet = (props: CaseProps) => {
@@ -61,3 +64,38 @@ export const EventCarnet = (props: EventProps) => {
     </div>
   )
 }
+export const InfoCarnet = (props: InfoProps) => {
+  return (
+  <div className='carnet case-carnet'>
+        
+    {/* <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        border: "4px double white",
+        borderRadius: "8px",
+        padding: 1,
+        width: 400,
+        backgroundColor: "#2F9597",
+      }}
+    >
+
+    </Box> */}
+    <div style={{ border: "1px solid #ccc", padding: "16px", borderRadius: "8px" }}>
+      {/* Título principal */}
+      <h2>{props.props.titulo}</h2>
+
+      {/* Renderizado de subtítulos y textos */}
+      {props.props.subtitulos.map((subtitulo, index) => (
+        <div key={index} style={{ marginBottom: "12px" }}>
+          <h4>
+            {index + 1}. {subtitulo}
+          </h4>
+          <p>{props.props.textos[index]}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+  )
+}
+

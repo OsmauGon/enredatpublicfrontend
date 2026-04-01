@@ -46,9 +46,11 @@ export type Info = {
     id: number;
     idDueño: number;
     estado: "habilitado" | "en espera" | "rechazado"
+    disponible?: boolean;
 
     titulo: string;
     subtitulos: string[];
     textos: string[];
+    images?: string[];
     infoType: "lista" | "no-lista"
 }

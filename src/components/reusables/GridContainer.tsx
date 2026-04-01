@@ -1,10 +1,10 @@
 import '../../styles/grid-container.css'
-import type { Case, Event, User } from "../../types/elements-pages"
+import type { Case, Event, Info, User } from "../../types/elements-pages"
 
 
 type GridContainerProps = {
-  items: User[] | Case[] | Event[];
-  setMockobject: (val: User | Case | Event | null)=>void
+  items: User[] | Case[] | Event[] | Info[];
+  setMockobject: (val: User | Case | Event | Info | null)=>void
 }
 
 export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobject }) => {
@@ -36,6 +36,12 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
               <h5>{item.titulo}</h5>
               <img className={`mini-image ${item.disponible ? "" : 'nodisponible'}`} src={item.mainImage} alt="Evento" />
               </>)}
+            {"textos" in item &&(<>
+              <h5>{item.titulo}</h5>
+              <p className='mini-text'>{item.subtitulos.join(" | ")}</p>
+            </>)
+
+            }
           </div>
 
           <button className='grid-item-button' disabled={!item.disponible} onClick={()=>{setMockobject(item)}}>{item.disponible ? "Conectar" : "Ocupado"}</button>

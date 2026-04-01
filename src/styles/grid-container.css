@@ -52,6 +52,9 @@ opacity: 0;
   margin: 0 auto;
 
 }
+.grid-item-content .mini.text{
+  font-size: 12px;
+}
 
 
 
