@@ -15,9 +15,8 @@ export const MockObject: React.FC<GridContainerProps> = ({ item, setMockobject }
   return (
     <div className='mockobject'>
         <button className='mockobject-button' onClick={()=> setMockobject(null)}>⬅️ Volver</button>
-        
-        {
-          "nombre" in item && ( //objeto User
+        <div className="mockobject-content">
+        {"nombre" in item && ( //objeto User
                                 <CarnetUsuario nombre={item.nombre}
                                 titulo={item.titulo}
                                 especialidad={item.rangoEtareo}
@@ -25,8 +24,7 @@ export const MockObject: React.FC<GridContainerProps> = ({ item, setMockobject }
                                 contacto={item.email}
                                 //fotoTitulo={item.mainImage}
                                 fotoUsuario={item.profileImage}
-                                />
-                              )
+                                />)
         }
         {"dx" in item && ( //objeto Case
           <CaseCarnet props={item}/>)}
@@ -36,8 +34,8 @@ export const MockObject: React.FC<GridContainerProps> = ({ item, setMockobject }
           <InfoCarnet props={item}/>
         )}
         
-        {"mainImage" in item && (<img src={item.mainImage} alt="titulo" />)}
-          
+        {"mainImage" in item && (<div className='mockimage-container'><img src={item.mainImage} alt="titulo" /></div>)}
+        </div>
     </div>
   )
 }

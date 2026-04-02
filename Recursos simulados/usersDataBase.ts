@@ -24,7 +24,8 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user2.png",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
-        titulo: "Licenciadx"
+        titulo: "Licenciadx",
+        esSupervisor: true
     },
     {
         id: 3,

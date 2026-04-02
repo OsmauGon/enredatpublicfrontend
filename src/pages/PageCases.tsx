@@ -9,20 +9,19 @@ import { FilterBar } from '../components/reusables/FilterBar'
 
 export const PageCases = () => {
 const [cases, setCases] = useState<Case[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  
-      const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
-  const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
+const [loading, setLoading] = useState(true)
+const [error, setError] = useState<string | null>(null)
+const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
+const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
 
-  const registrosFiltrados = cases.filter((r) => {
-    const matchNombre = r.tipoPaciente
+const registrosFiltrados = cases.filter((r) => {
+    const matchNombre = r.dx
       .toLowerCase()
       .includes(filtros.nombre.toLowerCase());
     const matchDisponible = filtros.disponible ? r.disponible : true;
     return matchNombre && matchDisponible;
-  });
-   useEffect(() => {
+});
+useEffect(() => {
       const fetchProfesionales = async () => {
         try {
           setLoading(true)
@@ -44,17 +43,16 @@ const [cases, setCases] = useState<Case[]>([])
       }
   
       fetchProfesionales()
-    }, [])
+}, [])
 
   
   return (
     <section>
         <h2>PageCasos</h2>
-        
-        <FilterBar filtros={filtros} onChange={setFiltros}></FilterBar>
+        <FilterBar palabraClave='diagnostico' filtros={filtros} onChange={setFiltros}></FilterBar>
         {loading && <p>Cargando...</p>}
         {error && <p>{error}</p>}
-        {registrosFiltrados.length > 0 && <GridContainer items={registrosFiltrados} setMockobject={setMockobjet}/>}
+        {(registrosFiltrados.length > 0 && !mockobjet) ?  <GridContainer items={registrosFiltrados} setMockobject={setMockobjet}/> : ""}
         {mockobjet && <MockObject item={mockobjet} setMockobject={setMockobjet}></MockObject>}
       
     </section>

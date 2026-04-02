@@ -81,18 +81,24 @@ export const InfoCarnet = (props: InfoProps) => {
     >
 
     </Box> */}
-    <div style={{ border: "1px solid #ccc", padding: "16px", borderRadius: "8px" }}>
+    <div style={{background: "rgba(0,0,0,.8)", border: "1px solid #ccc", padding: "16px", borderRadius: "8px" }}>
       {/* Título principal */}
-      <h2>{props.props.titulo}</h2>
+      <h2 style={{textAlign: "center"}}>{props.props.titulo}</h2>
 
       {/* Renderizado de subtítulos y textos */}
       {props.props.subtitulos.map((subtitulo, index) => (
-        <div key={index} style={{ marginBottom: "12px" }}>
+        <><div key={index} style={{ marginBottom: "12px" }}>
           <h4>
-            {index + 1}. {subtitulo}
+            {subtitulo}
           </h4>
           <p>{props.props.textos[index]}</p>
+          {(props.props.images && props.props.images?.length > 0) ? 
+            <img src={props.props.images[index]} alt="" />
+            : ""
+          }
         </div>
+        <hr />
+        </>
       ))}
     </div>
   </div>

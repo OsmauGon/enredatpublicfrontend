@@ -8,20 +8,20 @@ import type { Case, Event, Info, User } from '../types/elements-pages'
 
 export const PageEvents = () => {
   const [events, setEvents] = useState<Event[]>([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
-    const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
-    const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
+  const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
     
-    const registrosFiltrados = events.filter((r) => {
+  const registrosFiltrados = events.filter((r) => {
       const matchNombre = r.description
         .toLowerCase()
         .includes(filtros.nombre.toLowerCase());
       const matchDisponible = filtros.disponible ? r.disponible : true;
       return matchNombre && matchDisponible;
-    });
+  });
     
-    useEffect(() => {
+  useEffect(() => {
         const fetchProfesionales = async () => {
           try {
             setLoading(true)
@@ -43,24 +43,14 @@ export const PageEvents = () => {
         }
     
         fetchProfesionales()
-      }, [])
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  }, [])
   
   return (
     <section>
-        <FilterBar filtros={filtros} onChange={setFiltros}></FilterBar>
+        <FilterBar palabraClave='titulo' filtros={filtros} onChange={setFiltros}></FilterBar>
       {loading && <p>Cargando...</p>}
       {error && <p>{error}</p>}
-      {registrosFiltrados.length > 0 && <GridContainer items={registrosFiltrados} setMockobject={setMockobjet}/>}
+      {(registrosFiltrados.length > 0 && !mockobjet) ?  <GridContainer items={registrosFiltrados} setMockobject={setMockobjet}/> : ""}
       {mockobjet && <MockObject item={mockobjet} setMockobject={setMockobjet}></MockObject>}
     
     </section>

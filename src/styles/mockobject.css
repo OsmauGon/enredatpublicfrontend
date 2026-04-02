@@ -1,14 +1,16 @@
 @import '../../src/main-styles.css';
 
-.mockobject{
+.mockobject{/* 
     position: fixed;
     z-index: 10;
-    top: 0;
+    top: 0; */
     color: white;
+    margin: auto;
     padding: 15px;
     background-color: rgba(0, 0, 0, .5);
-    width: 100%;
+    width: 90%;
     height: 100%;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +24,7 @@
     padding: 5px 8px;
     margin-bottom: 5px;
     background-color: var(--verdeDELlogo);
-    color: white;
+    color: red;
     font-size: 18px;
     display: block;
 }
@@ -32,17 +34,18 @@
 
 
 
-/*
+
 .mockobject-content{
-    width: 800px;
     margin: auto;
     padding: 10px;
-    background-color: rgba(0, 0, 0, .8);
+    /* background-color: rgba(0, 0, 0, .8); */
     border-radius: 25px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
+/*
 .mockobject-info{
     background-color: red;
     width: 45%;
@@ -58,15 +61,18 @@
 }
     */
 
-    .mockobject img{
-        margin-top: 10px;
+    .mockobject-content .mockimage-container{
         border-radius: 8px;
         width: 400px;
         height: 210px;
+    }
+    .mockimage-container img{
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         object-position: center;
     }
-    .mockobject img:hover{
+    /* .mockobject-content img:hover{
         object-position:unset;
         position: relative;
         transform: translateY(-30%);
@@ -74,4 +80,12 @@
         max-width: 500px;
         height: auto;
         transition: 1s;
-    }
+    } */
+     .mockimage-container:hover >  img{
+        object-fit: contain;
+        position: relative;
+        transform: scale(2);
+        bottom: 150px;
+        transition: .5s;
+     }
+     

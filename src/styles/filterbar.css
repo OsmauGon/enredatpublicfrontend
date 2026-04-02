@@ -1,7 +1,7 @@
 @import '../main-styles.css';
 
 .filterBar{
-    min-width: 380px;
+    min-width: 440px;
     width: 50%;
     background: linear-gradient(to right, var(--verdeDELlogo), #00cc99); 
     margin: 5px auto;
@@ -9,6 +9,7 @@
     border-radius: 50px;
     display: flex;
     justify-content: center;
+    font-size: 12px;
 }
 
 .filterBar svg{

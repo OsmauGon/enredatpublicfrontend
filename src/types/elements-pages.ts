@@ -12,6 +12,7 @@ export type User = {
     titulo?: "Acompañante terapéutico" | "Licenciadx" | "Tecnicx" | "Tecnicx Superior";
     profileImage?: string;
     mainImage?: string;
+    esSupervisor?: boolean;
 }
 
 export type Case = {
