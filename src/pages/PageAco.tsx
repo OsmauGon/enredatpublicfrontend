@@ -4,6 +4,7 @@ import {allusers} from '../../Recursos simulados/usersDataBase'
 import {GridContainer} from '../components/reusables/GridContainer'
 import { MockObject } from '../components/reusables/MockObject'
 import { FilterBar } from '../components/reusables/FilterBar'
+import { allusersget } from '../endpoints/users-endpoints'
 
 
 
@@ -27,7 +28,7 @@ export const PageAco = () => {
       try {
         setLoading(true)
         // Simulación de llamada al backend
-        const response = await fetch('/api/users') // tu endpoint real
+        const response = await fetch(allusersget) // tu endpoint real
         const data: User[] = await response.json()
         if (!response.ok) throw new Error('Error en la respuesta del servidor')
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../styles/mockobject.css'
 import type { Case, Event, Info, User } from '../../types/elements-pages';
-import CarnetUsuario from './CarnetUsuario';
+import { CarnetUsuario } from './Carnets';
 import { CaseCarnet, EventCarnet, InfoCarnet } from './Carnets';
 
 

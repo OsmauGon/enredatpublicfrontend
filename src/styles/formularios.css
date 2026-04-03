@@ -1,0 +1,44 @@
+
+:root{
+    --algo: 50px
+}
+.form2 {
+    
+}
+.form2 .inputs-container{
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+}
+.form2 .submit-button{
+    margin: 5px 0;
+}
+.user-form #checkbox-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+.user-form .file-inputs{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+.event-form{}
+.event-form div div{
+    padding: 5px 0;
+    
+}
+.startdate, .enddate, .fileinput{
+    width: 100%;
+    border-bottom: 2px solid blue ;
+    display: flex;
+    justify-content: space-between;
+}
+.event-form input {
+    background-color: transparent;
+    border: none;
+}

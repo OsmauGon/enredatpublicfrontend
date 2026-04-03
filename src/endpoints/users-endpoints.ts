@@ -1,0 +1,5 @@
+export const allusersget: string = "allusersgetendpoint"
+export const individualuserget: string = "individualusergetendpoint"
+export const userspost: string = "userspostendpoint"
+export const userpatch: string = "userpatchendpoint"
+export const userdelete: string = "userdeleteendpoint"
