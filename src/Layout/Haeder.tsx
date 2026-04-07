@@ -1,5 +1,8 @@
 
 import { Link } from 'react-router-dom'
+import { UserContext } from '../contexts/UserContext'
+import { useContext } from 'react';
+
 
 
 const cerrarNav = () =>{
@@ -9,6 +12,11 @@ const cerrarNav = () =>{
     setTimeout(()=>{nav.classList.remove("show")}, 100)
 }
 export const Haeder = () => {
+    const context = useContext(UserContext);
+    if (!context) {
+    throw new Error("Header debe usarse dentro de un UserProvider");
+    }
+    const {user} = context
   return (
     <header>
         
@@ -27,7 +35,8 @@ export const Haeder = () => {
                     <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/comunidad">Comunidad</Link></li>
                     <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/infoutil">InfoUtil</Link> </li>
                     <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/supervision">Supervision</Link> </li>
-                    <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/login">Ingrese</Link> </li>
+                    {!user && <li className="nav-item" onClick={cerrarNav}><Link className='nav-link' to="/login">Ingrese</Link> </li>}
+                    
                     {/* <li className="nav-item"><Link className='nav-link' to="/regitro">Registro</Link> </li> */}
                     {/* <li className="nav-item"><Link className='nav-link' to="/contact">Contact</Link></li> */}
                 </ul>

@@ -1,12 +1,11 @@
-import React from 'react'
-//import UnderConstruction from '../components/reusables/UnderConstruction'
+
 import { Box } from '@mui/material'
 import { UserForm } from '../components/formularios/UserForm'
 import { userspost } from '../endpoints/users-endpoints'
 
-type Props = {}
 
-export const PageLogreg = (props: Props) => {
+
+export const PageLogreg = () => {
   return (
     <section>
         <h2>PageLogreg</h2>
@@ -14,11 +13,12 @@ export const PageLogreg = (props: Props) => {
           sx={{
             display: "flex",
             flexDirection: "row",
-            border: "4px double white",
+            border: "4px double #2F9597",
             borderRadius: "8px",
             padding: 1,
+            margin: "auto",
             width: 400,
-            backgroundColor: "#2F9597",
+            backgroundColor: "transparent",
       }}
     ><UserForm objetoo={{endpoint: userspost, metodo: "POST"}}/> </Box>
     </section>

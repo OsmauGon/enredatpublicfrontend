@@ -1,21 +1,21 @@
 import type {Case} from '../src/types/elements-pages'
 export const allcases: Case[]  = [
     {
-        id: 1,
+        id: 1 ,
         idDueño: 1,
         estado: "habilitado",
-        disponible: true,
+        disponible: false,
         tipoPaciente: "Niñx",
         dx: "TDH",
         edad: 12,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 1 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12",
         
     },
     {
-        id: 2,
+        id: 2 ,
         idDueño: 1,
         estado: "habilitado",
         disponible: true,
@@ -23,13 +23,13 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 24,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 2 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "OSDEPYM - ",
         franjahoraria: "08 a 12"
         
     },
     {
-        id: 3,
+        id: 3 ,
         idDueño: 1,
         estado: "habilitado",
         disponible: true,
@@ -37,12 +37,12 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 36,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 3 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     },    
     {
-        id: 4,
+        id: 4 ,
         idDueño: 1,
         estado: "en espera",
         disponible: true,
@@ -50,12 +50,12 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 72,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 4 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     }    ,
     {
-        id: 5,
+        id: 5 ,
         idDueño: 1,
         estado: "rechazado",
         disponible: true,
@@ -63,13 +63,13 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 24,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 5 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "OSDEPYM - ",
         franjahoraria: "08 a 12"
         
     },
     {
-        id: 6,
+        id: 6 ,
         idDueño: 1,
         estado: "habilitado",
         disponible: true,
@@ -77,25 +77,25 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 36,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 6 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     },    
     {
-        id: 7,
+        id: 7 ,
         idDueño: 1,
         estado: "habilitado",
-        disponible: true,
+        disponible: false,
         tipoPaciente: "Adulto mayor",
         dx: "TDH",
         edad: 72,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 7 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     }    ,
     {
-        id: 8,
+        id: 8 ,
         idDueño: 1,
         estado: "en espera",
         disponible: true,
@@ -103,13 +103,13 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 24,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 8 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "OSDEPYM - ",
         franjahoraria: "08 a 12"
         
     },
     {
-        id: 9,
+        id: 9 ,
         idDueño: 1,
         estado: "habilitado",
         disponible: true,
@@ -117,12 +117,12 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 36,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: " 9 - Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     },    
     {
-        id: 10,
+        id: 10 ,
         idDueño: 1,
         estado: "habilitado",
         disponible: true,
@@ -130,26 +130,26 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 72,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: "S10 - e busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     }    ,
     {
-        id: 11,
+        id: 11 ,
         idDueño: 1,
         estado: "habilitado",
-        disponible: true,
+        disponible: false,
         tipoPaciente: "Adolecente",
         dx: "TDH",
         edad: 24,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: "S11 - e busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "OSDEPYM - ",
         franjahoraria: "08 a 12"
         
     },
     {
-        id: 12,
+        id: 12 ,
         idDueño: 1,
         estado: "en espera",
         disponible: true,
@@ -157,12 +157,12 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 36,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: "S12 - e busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     },    
     {
-        id: 13,
+        id: 13 ,
         idDueño: 1,
         estado: "habilitado",
         disponible: true,
@@ -170,12 +170,12 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 72,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: "S13 - e busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     }    ,
     {
-        id: 14,
+        id: 14 ,
         idDueño: 1,
         estado: "habilitado",
         disponible: true,
@@ -183,13 +183,13 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 24,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: "S14 - e busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "OSDEPYM - ",
         franjahoraria: "08 a 12"
         
     },
     {
-        id: 15,
+        id: 15 ,
         idDueño: 1,
         estado: "rechazado",
         disponible: true,
@@ -197,7 +197,7 @@ export const allcases: Case[]  = [
         dx: "TDH",
         edad: 36,
         contacto:["juan@hotmail.com","223678921"],
-        solicitud: "Se busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
+        solicitud: "S15 - e busca un acompañante terapéutico (varon excluyente) para un turno de mañana",
         covertura: "PARTICULAR - 123456 x hora",
         franjahoraria: "08 a 12"
     }

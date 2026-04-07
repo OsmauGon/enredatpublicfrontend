@@ -5,8 +5,8 @@ import { Checkbox, FormControlLabel, Box } from "@mui/material";
 
 interface FiltroBarProps {
   palabraClave: string;
-  filtros: { nombre: string; disponible: boolean; esSupervisor: boolean; };
-  onChange: (filtros: { nombre: string; disponible: boolean, esSupervisor: boolean }) => void;
+  filtros: { nombre: string; disponible: boolean; esSupervisor?: boolean; };
+  onChange: (filtros: { nombre: string; disponible: boolean, esSupervisor?: boolean }) => void;
 }
 
 export const FilterBar: React.FC<FiltroBarProps> = ({palabraClave, filtros, onChange }) => {
@@ -25,17 +25,20 @@ export const FilterBar: React.FC<FiltroBarProps> = ({palabraClave, filtros, onCh
         }
         label="Disponible"
       />
-      <FormControlLabel
-        control={
-          <Checkbox
-            checked={filtros.esSupervisor}
-            onChange={(e) =>
-              onChange({ ...filtros, esSupervisor: e.target.checked })
-            }
-          />
-        }
-        label="Supervisores"
-      />
+      {"esSupervisor" in filtros ?
+                                  <FormControlLabel
+                                    control={
+                                      <Checkbox
+                                        checked={filtros.esSupervisor}
+                                        onChange={(e) =>
+                                          onChange({ ...filtros, esSupervisor: e.target.checked })
+                                        }
+                                      />
+                                    }
+                                    label="Supervisores"
+                                  /> 
+                                : ""}
+      
     </Box>
   );
 };

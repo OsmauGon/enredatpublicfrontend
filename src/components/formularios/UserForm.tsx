@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Alert, Box, Button, FormControl, InputLabel, MenuItem, Select, Stack, TextField, Typography } from "@mui/material";
 import '../../styles/formularios.css'
 import type { RequesSettings } from '../../types/request-settings';
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
+
+
+
 
 type RequestSettings = {
   objetoo: RequesSettings
@@ -24,7 +29,12 @@ type UserFormType = {
 
 
 export const UserForm = ({objetoo}: RequestSettings) =>{
-  
+  const navigate = useNavigate()
+  const context = useContext(UserContext);
+      if (!context) {
+      throw new Error("Header debe usarse dentro de un UserProvider");
+      }
+      const {setUser} = context
   const [requestType,setRequestType] = useState<"userLogin" | "userRegister" | "atRegister">("userLogin")
   const {
     control,
@@ -37,7 +47,7 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
         title: ""
       }
     });
-
+    
     const onSubmit = async (data: UserFormType) => {
     console.log(`se usara el metodo ${objetoo.metodo} para el url ${objetoo.endpoint}`)
     console.log(data);
@@ -66,7 +76,7 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
         setError("title",{message: "El obligatoria una constancia del titulo"})
         return
       }
-      if (data.password != data.passwordConfirm) {
+      if (requestType !== "userLogin" && data.password != data.passwordConfirm) {
         setError("title",{message: "Las contraseñas no coinciden"})
         return
       }
@@ -93,7 +103,19 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
       }
         */
       console.log("Envio al backend correcto")
+      navigate('/')
+      setUser({
+        id:100,
+        estado: "habilitado",
+        email: "mauricio@yahoo",
+        phone: "123456",
+        nombre: "mauricio",
+        disponible: true,
+        rol: "admin"
+      })
+      
     };
+
     
 
 
@@ -174,8 +196,6 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
           : ""
         }
 
-        {isSubmitSuccessful && <Alert severity="success">Hemos registrado su solicitud, ya se encuentra en revision</Alert>}
-        {errors.title && <Alert severity="error" >Ha ocurrido un error: {errors.title.message}</Alert>}
       
         <Button className="submit-button" type='submit' variant="contained" color='primary' >{requestType === "userLogin" ? "Ingresar" : "Registrarse"}</Button>
         {(requestType === "userLogin") ? 
@@ -183,6 +203,9 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
             : ""
         } 
       </Stack>
+      
+        {isSubmitSuccessful && <Alert severity="success">{requestType === "userLogin" ? "Bienvenid@" : "Hemos registrado su solicitud, ya se encuentra en revision"}</Alert>}
+        {errors.title && <Alert severity="error" >Ha ocurrido un error: {errors.title.message}</Alert>}
     </Box>
     </>
   );

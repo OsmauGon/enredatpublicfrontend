@@ -11,12 +11,14 @@ import { PageEvents } from './pages/PageEvents'
 import { PageInfo } from './pages/PageInfo'
 import { PageLogreg } from './pages/PageLogreg'
 import { PageSup } from './pages/PageSup'
+import { UserProvider } from './contexts/UserProvider'
 
 function App() {
   
 
   return (
     <>
+        <UserProvider>
         <Haeder></Haeder>
         <main>
             <Routes>
@@ -35,6 +37,7 @@ function App() {
             </Routes>
         </main> 
         <Footer></Footer>
+        </UserProvider>
     </>
   )
 }
