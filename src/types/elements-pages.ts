@@ -4,6 +4,7 @@ export type User = {
     id: number;
     estado: "habilitado" | "en espera" | "rechazado"
     nombre: string;
+    password: string;
     email: string;
     phone: string;
     rol: "admin" | "profesional" | "usuario"

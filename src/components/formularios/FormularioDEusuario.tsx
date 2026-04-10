@@ -1,16 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Alert, Box, Button, FormControl, InputLabel, MenuItem, Select, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, FormControl, InputLabel, MenuItem, Select, Stack, TextField, Typography } from "@mui/material";
 import '../../styles/formularios.css'
-import type { RequesSettings } from '../../types/request-settings';
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
+import { loginProtocol } from "../../servicios/loginUser";
 
 
 
 
 type RequestSettings = {
-  objetoo: RequesSettings
+  setRequestSuccess: (val: string)=> void;
+  setRequestError: (val: string)=> void;
 }
 type UserFormType = {
   email: string;
@@ -28,13 +29,13 @@ type UserFormType = {
 
 
 
-export const UserForm = ({objetoo}: RequestSettings) =>{
+export const UserForm = ({setRequestSuccess, setRequestError} :RequestSettings) =>{
   const navigate = useNavigate()
   const context = useContext(UserContext);
-      if (!context) {
-      throw new Error("Header debe usarse dentro de un UserProvider");
-      }
-      const {setUser} = context
+    if (!context) {
+    throw new Error("Header debe usarse dentro de un UserProvider");
+    }
+    const {setUser} = context
   const [requestType,setRequestType] = useState<"userLogin" | "userRegister" | "atRegister">("userLogin")
   const {
     control,
@@ -43,13 +44,22 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
     setError,//usaremos esta funcion para mostrar como error la denegacion del backend
     formState: { errors, isSubmitting, isSubmitSuccessful }
     } = useForm<UserFormType>({
-      defaultValues: {
-        title: ""
-      }
+      defaultValues: {title: ""}
     });
+    useEffect(() => {
+        if (isSubmitSuccessful) {
+            setRequestSuccess(requestType);
+            console.log("Envio al backend correcto");
+        }
+        if(errors && errors.title?.message) {
+        console.log("error de contraseñas")
+        setRequestError(errors.title?.message)
+        console.log("Envio al backend incorrecto")
+        }
+    }, [isSubmitting]);
     
     const onSubmit = async (data: UserFormType) => {
-    console.log(`se usara el metodo ${objetoo.metodo} para el url ${objetoo.endpoint}`)
+    console.log(`se usara el metodo objetoo.metodo para el url objetoo.endpoint`)
     console.log(data);
     // simulamos request
     await new Promise(res => setTimeout(res, 3000));
@@ -77,10 +87,12 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
         return
       }
       if (requestType !== "userLogin" && data.password != data.passwordConfirm) {
+        
         setError("title",{message: "Las contraseñas no coinciden"})
         return
       }
       console.log(formData)
+      
       
       /*
       try {
@@ -102,18 +114,26 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
 
       }
         */
-      console.log("Envio al backend correcto")
-      navigate('/')
+      
+      /*navigate('/')
       setUser({
         id:100,
         estado: "habilitado",
-        password: "12345678",
         email: "mauricio@yahoo",
         phone: "123456",
         nombre: "mauricio",
         disponible: true,
-        rol: "admin"
-      })
+        rol: "admin",
+        password: "12345678"
+      })*/
+      const usuario = loginProtocol("endpoint", data)
+      if(usuario && usuario.length > 0){
+        console.log(usuario)
+        setUser(usuario[0])
+        navigate('/')
+      } else {
+        setError("title",{message: "Usuario no encontrado"})
+      }
       
     };
 
@@ -205,9 +225,7 @@ export const UserForm = ({objetoo}: RequestSettings) =>{
         } 
       </Stack>
       
-        {isSubmitSuccessful && <Alert severity="success">{requestType === "userLogin" ? "Bienvenid@" : "Hemos registrado su solicitud, ya se encuentra en revision"}</Alert>}
-        {errors.title && <Alert severity="error" >Ha ocurrido un error: {errors.title.message}</Alert>}
-    </Box>
+        </Box>
     </>
   );
 }

@@ -1,26 +1,26 @@
 
-import { Box } from '@mui/material'
-import { UserForm } from '../components/formularios/UserForm'
-import { userspost } from '../endpoints/users-endpoints'
 
+import { Alert } from '@mui/material';
+import { useState } from 'react';
+import { UserForm } from '../components/formularios/FormularioDEusuario';
 
+type UserForm = {
+  email: string;
+  pass: string;
+}
 
 export const PageLogreg = () => {
+  const [requestSuccess,setRequestSuccess] = useState<string | null>(null)
+  const [requestError, setRequestError] =  useState<string | null>(null)
   return (
     <section>
         <h2>PageLogreg</h2>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            border: "4px double #2F9597",
-            borderRadius: "8px",
-            padding: 1,
-            margin: "auto",
-            width: 400,
-            backgroundColor: "transparent",
-      }}
-    ><UserForm objetoo={{endpoint: userspost, metodo: "POST"}}/> </Box>
+        {!requestSuccess && <UserForm setRequestSuccess={setRequestSuccess} setRequestError={setRequestError}/>}
+        
+        {requestSuccess && <Alert severity="success">{requestSuccess === "userLogin" ? "Bienvenid@ a EnRedat" : "Hemos registrado su solicitud, ya se encuentra en revision"}</Alert>}
+        {requestError && <Alert severity="error" >Ha ocurrido un error: {requestError}</Alert>}
+    
     </section>
+
   )
 }

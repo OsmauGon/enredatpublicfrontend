@@ -3,6 +3,7 @@ export const allusers: User[] = [
     {
         id: 1,
         nombre: "Juan Ignacion Rodriguez",
+        password:"12345678",
         email: "nacho@gmail.com",
         phone: "12345678910",
         disponible: true,
@@ -16,7 +17,8 @@ export const allusers: User[] = [
     {
         id: 2,
         nombre: "Hernan Hernandez",
-        email: "nacho@gmail.com",
+        password:"12345678",
+        email: "hernan@gmail.com",
         phone: "12345678910",
         disponible: true,
         estado: "habilitado",
@@ -30,7 +32,8 @@ export const allusers: User[] = [
     {
         id: 3,
         nombre: "Gonzalo Gonzalez",
-        email: "nacho@gmail.com",
+        password:"12345678",
+        email: "gonzalo@gmail.com",
         phone: "12345678910",
         disponible: false,
         estado: "habilitado",
@@ -43,7 +46,8 @@ export const allusers: User[] = [
     {
         id: 4,
         nombre: "Martina Martinez",
-        email: "nacho@gmail.com",
+        password:"12345678",
+        email: "martina@gmail.com",
         phone: "12345678910",
         disponible: true,
         estado: "habilitado",
@@ -56,7 +60,8 @@ export const allusers: User[] = [
     {
         id: 5,
         nombre: "Fernanda Fernandez",
-        email: "nacho@gmail.com",
+        password:"12345678",
+        email: "fernanda@gmail.com",
         phone: "12345678910",
         disponible: true,
         estado: "habilitado",
@@ -69,6 +74,7 @@ export const allusers: User[] = [
     {
         id: 6,
         nombre: "Juan Juarez",
+        password:"12345678",
         email: "juan@gmail.com",
         phone: "12345678910",
         disponible: true,
@@ -82,6 +88,7 @@ export const allusers: User[] = [
     {
         id: 7,
         nombre: "Esteban Estebanez",
+        password:"12345678",
         email: "esteban2@gmail.com",
         phone: "12345678910",
         disponible: true,
@@ -95,7 +102,8 @@ export const allusers: User[] = [
     {
         id: 8,
         nombre: "Ivan Ivañez",
-        email: "ivan2@gmail.com",
+        password:"12345678",
+        email: "ivan@gmail.com",
         phone: "12345678910",
         disponible: true,
         estado: "habilitado",
@@ -108,6 +116,7 @@ export const allusers: User[] = [
     {
         id: 11,
         nombre: "Juan Ignacion Rodriguez",
+        password:"12345678",
         email: "nacho2@gmail.com",
         phone: "12345678910",
         disponible: false,
@@ -118,8 +127,9 @@ export const allusers: User[] = [
         rol: "usuario"
     },
     {
-        id: 112,
+        id: 12,
         nombre: "Hernan Hernandez",
+        password:"12345678",
         email: "hernan2@gmail.com",
         phone: "12345678910",
         disponible: false,
@@ -132,6 +142,7 @@ export const allusers: User[] = [
     {
         id: 13,
         nombre: "Gonzalo Gonzalez",
+        password:"12345678",
         email: "gonzalo2@gmail.com",
         phone: "12345678910",
         disponible: false,
@@ -144,6 +155,7 @@ export const allusers: User[] = [
     {
         id: 14,
         nombre: "Martina Martinez",
+        password:"12345678",
         email: "martina2@gmail.com",
         phone: "12345678910",
         disponible: false,
@@ -156,7 +168,8 @@ export const allusers: User[] = [
     {
         id: 15,
         nombre: "Fernanda Fernandez",
-        email: "fernando2@gmail.com",
+        password:"12345678",
+        email: "fernanda2@gmail.com",
         phone: "12345678910",
         disponible: false,
         estado: "en espera",
@@ -168,6 +181,7 @@ export const allusers: User[] = [
     {
         id: 16,
         nombre: "Juan Juarez",
+        password:"12345678",
         email: "juan2@gmail.com",
         phone: "12345678910",
         disponible: false,
@@ -180,6 +194,7 @@ export const allusers: User[] = [
     {
         id: 17,
         nombre: "Esteban Estebanez",
+        password:"12345678",
         email: "esteban2@gmail.com",
         phone: "12345678910",
         disponible: false,
@@ -192,6 +207,7 @@ export const allusers: User[] = [
     {
         id: 18,
         nombre: "Ivan Ivañez",
+        password:"12345678",
         email: "ivan2@gmail.com",
         phone: "12345678910",
         disponible: false,
