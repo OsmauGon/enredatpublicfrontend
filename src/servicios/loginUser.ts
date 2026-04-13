@@ -4,8 +4,7 @@ type loginUser = {
     email: string;
     password: string;
 }
-export const loginProtocol =(endp: string, recurso :loginUser)=>{
-    console.log(endp)
+export const loginProtocol =(recurso :loginUser)=>{
     //buscar en base de datos simulada
     const user = allusers.filter(i => i.email === recurso.email && i.password === recurso.password);
 
@@ -27,3 +26,12 @@ export const loginProtocol =(endp: string, recurso :loginUser)=>{
     }
     return []
 }
+
+
+
+
+
+
+
+
+

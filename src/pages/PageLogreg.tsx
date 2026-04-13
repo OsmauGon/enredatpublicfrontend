@@ -1,6 +1,6 @@
 
 
-import { Alert } from '@mui/material';
+import { Alert, Box } from '@mui/material';
 import { useState } from 'react';
 import { UserForm } from '../components/formularios/FormularioDEusuario';
 
@@ -16,9 +16,11 @@ export const PageLogreg = () => {
     <section>
         <h2>PageLogreg</h2>
         {!requestSuccess && <UserForm setRequestSuccess={setRequestSuccess} setRequestError={setRequestError}/>}
-        
-        {requestSuccess && <Alert severity="success">{requestSuccess === "userLogin" ? "Bienvenid@ a EnRedat" : "Hemos registrado su solicitud, ya se encuentra en revision"}</Alert>}
+        <Box  sx={{maxWidth: 400, mx: "auto"}}>
+
+        {requestSuccess && <Alert severity="success">{requestSuccess === "Usuario Encontrado" ? "Bienvenid@ a EnRedat" : "Hemos registrado su solicitud, ya se encuentra en revision"}</Alert>}
         {requestError && <Alert severity="error" >Ha ocurrido un error: {requestError}</Alert>}
+        </Box>
     
     </section>
 

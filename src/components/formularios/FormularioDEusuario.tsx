@@ -5,13 +5,14 @@ import '../../styles/formularios.css'
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import { loginProtocol } from "../../servicios/loginUser";
+import { registerProtocol } from "../../servicios/registerUser";
 
 
 
 
 type RequestSettings = {
   setRequestSuccess: (val: string)=> void;
-  setRequestError: (val: string)=> void;
+  setRequestError: (val: string | null)=> void;
 }
 type UserFormType = {
   email: string;
@@ -41,12 +42,17 @@ export const UserForm = ({setRequestSuccess, setRequestError} :RequestSettings) 
     control,
     register,
     handleSubmit,
+    clearErrors,
     setError,//usaremos esta funcion para mostrar como error la denegacion del backend
     formState: { errors, isSubmitting, isSubmitSuccessful }
     } = useForm<UserFormType>({
       defaultValues: {title: ""}
     });
     useEffect(() => {
+        clearErrors()
+        setRequestError(null)
+
+
         if (isSubmitSuccessful) {
             setRequestSuccess(requestType);
             console.log("Envio al backend correcto");
@@ -126,15 +132,20 @@ export const UserForm = ({setRequestSuccess, setRequestError} :RequestSettings) 
         rol: "admin",
         password: "12345678"
       })*/
-      const usuario = loginProtocol("endpoint", data)
-      if(usuario && usuario.length > 0){
+      const usuario = loginProtocol(data)
+      if(requestType === "userLogin" && usuario && usuario.length > 0){
         console.log(usuario)
         setUser(usuario[0])
         navigate('/')
-      } else {
+      } else if(requestType === "userLogin"){
         setError("title",{message: "Usuario no encontrado"})
       }
-      
+      const newUsuario = registerProtocol(data)
+      if(requestType !== "userLogin" && newUsuario ){
+      setUser(newUsuario)
+      }else if(requestType === "userRegister"){
+        setError("title",{message: "Email ya existente"})
+      }
     };
 
     
