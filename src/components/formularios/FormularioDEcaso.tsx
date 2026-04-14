@@ -1,5 +1,14 @@
-
-import { useState } from "react";
+/*
+Necesitamos un componente que exporte un formulario para cargar un caso para asistente terapéutico
+Los inputs deben ser:
+-Edad
+-tipoPaciente (niñx,adolecente,adulto,adulto mayor)
+-covertura (particular o obra social) Si es particular necesitamos un input para ingresar el valor por hora, y se obra social necesitamos un input para ingresar el nombre de la obra social
+-franja horaria (dos inputs que especifiquen de que hora a que hora el asistente terapéutico debe estar con el paciente)
+-contacto (email y telefono)
+-textarea para que el usuario ingrese detalles de la solicitud
+*/
+import { useContext, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import {
   TextField,
@@ -11,8 +20,14 @@ import {
   Typography,
   Box
 } from "@mui/material";
+import { UserContext } from "../../contexts/UserContext";
 
-type FormData = {
+type RequestSettings = {
+  setRequestSuccess: (val: string)=> void;
+  setRequestError: (val: string | null)=> void;
+}
+type CaseFormData = {
+  idDueño: number;
   edad: number;
   tipoPaciente: "Niñx" | "Adolescente" | "Adulto" | "Adulto mayor";
   cobertura: "Particular" | "Obra social";
@@ -25,31 +40,74 @@ type FormData = {
   detalles: string;
 };
 
-export const CasoForm = ()=> {
-  const [estadoDeSolicutud,setEstadoDeSolicitud] = useState<"espera" | "cargando" | "enviado">("espera")
+export const CaseForm = ({setRequestSuccess, setRequestError} :RequestSettings)=> {
+  const context = useContext(UserContext);
+    if (!context) {
+    throw new Error("Header debe usarse dentro de un UserProvider");
+    }
+  const {user} = context
+  //const [estadoDeSolicutud,setEstadoDeSolicitud] = useState<"espera" | "cargando" | "enviado">("espera")
   const {
     register,
     handleSubmit,
     watch,
+    clearErrors,
     control,
-    formState: { errors, isSubmitting, isValid }
-  } = useForm<FormData>({
+    formState: { errors, isSubmitting, isSubmitSuccessful, isValid }
+  } = useForm<CaseFormData>({
     mode: "onChange"
   });
 
   const coberturaSeleccionada = watch("cobertura");
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: CaseFormData) => {
     console.log("Caso cargado:", data);
-    setEstadoDeSolicitud("cargando")
-    setTimeout(()=>{setEstadoDeSolicitud("enviado")}, 3000)
+    console.log(`se usara el metodo objetoo.metodo para el url objetoo.endpoint`)
+    if(user && user.id)data.idDueño = user.id
+    console.log(data);
+    // simulamos request
+    await new Promise(res => setTimeout(res, 3000));
     
+    /*//post request
+      try {
+        const response = await fetch(objetoo.endpoint, {
+          method: objetoo.metodo,
+          body: formData, // 🔑 enviamos FormData
+          // No seteamos Content-Type manualmente, fetch lo hace al detectar FormData
+        });
+
+        if (!response.ok) {
+          throw new Error("Error en la solicitud");
+        }
+
+        const result = await response.json();
+        console.log("Registro exitoso:", result);
+      } catch (error) {
+        console.error("Error en el backend:", error);
+        setError("title", { type: "server", message: "Error inesperado en el servidor" });
+
+      }
+        */
   };
+  useEffect(() => {
+          clearErrors()
+          setRequestError(null)
+  
+  
+          if (isSubmitSuccessful) {
+              setRequestSuccess("success");
+              console.log("Envio al backend correcto");
+          }
+          if(Object.keys(errors).length > 0) {
+          console.log(errors)
+          setRequestError(Object.values(errors).join(' | '))
+          console.log("Envio al backend incorrecto")
+          }
+      }, [isSubmitting]);
 
   return (
   <> 
-    {(estadoDeSolicutud === "enviado") ? <div className="solicitud-enviada">✅ Solicitud Enviada ✅</div>
-    : <Box
+    <Box
       className="caso-form"
       component="form"
       onSubmit={handleSubmit(onSubmit)}
@@ -64,9 +122,8 @@ export const CasoForm = ()=> {
         {...register("edad", { required: "La edad es obligatoria", min: 1 })}
         error={!!errors.edad}
         helperText={errors.edad?.message}
-        disabled={estadoDeSolicutud == "cargando"}
+        disabled={isSubmitting || isSubmitSuccessful}
       />
-
       {/* Tipo de paciente */}
       <FormControl>
         <InputLabel>Tipo de paciente</InputLabel>
@@ -82,13 +139,12 @@ export const CasoForm = ()=> {
               <MenuItem value="Adulto mayor">Adulto mayor</MenuItem>
             </Select>
           )}
-          disabled={estadoDeSolicutud == "cargando"}
+          disabled={isSubmitting || isSubmitSuccessful}
         />
         {errors.tipoPaciente && (
           <Typography color="error">{errors.tipoPaciente.message}</Typography>
         )}
       </FormControl>
-
       {/* Cobertura */}
       <FormControl>
         <InputLabel>Cobertura</InputLabel>
@@ -102,13 +158,12 @@ export const CasoForm = ()=> {
               <MenuItem value="Obra social">Obra Social</MenuItem>
             </Select>
           )}
-          disabled={estadoDeSolicutud == "cargando"}
+          disabled={isSubmitting || isSubmitSuccessful}
         />
         {errors.cobertura && (
           <Typography color="error">{errors.cobertura.message}</Typography>
         )}
       </FormControl>
-
       {/* Condicional según cobertura */}
       {coberturaSeleccionada === "Particular" && (
         <TextField
@@ -119,10 +174,9 @@ export const CasoForm = ()=> {
           })}
           error={!!errors.valorHora}
           helperText={errors.valorHora?.message}
-          disabled={estadoDeSolicutud == "cargando"}
+          disabled={isSubmitting || isSubmitSuccessful}
         />
       )}
-
       {coberturaSeleccionada === "Obra social" && (
         <TextField
           label="Nombre de la obra social"
@@ -131,10 +185,9 @@ export const CasoForm = ()=> {
           })}
           error={!!errors.obraSocial}
           helperText={errors.obraSocial?.message}
-          disabled={estadoDeSolicutud == "cargando"}
+          disabled={isSubmitting || isSubmitSuccessful}
         />
       )}
-
       {/* Franja horaria */}
       <Box sx={{ display: "flex", gap: 2 }}>
         <TextField
@@ -144,7 +197,7 @@ export const CasoForm = ()=> {
           {...register("horaInicio", { required: "Ingrese la hora de inicio" })}
           error={!!errors.horaInicio}
           helperText={errors.horaInicio?.message}
-          disabled={estadoDeSolicutud == "cargando"}
+          disabled={isSubmitting || isSubmitSuccessful}
         />
         <TextField
         className="input-horario"
@@ -153,10 +206,9 @@ export const CasoForm = ()=> {
           {...register("horaFin", { required: "Ingrese la hora de fin" })}
           error={!!errors.horaFin}
           helperText={errors.horaFin?.message}
-          disabled={estadoDeSolicutud == "cargando"}
+          disabled={isSubmitting || isSubmitSuccessful}
         />
       </Box>
-
       {/* Contacto */}
       <TextField
         label="Email"
@@ -167,37 +219,34 @@ export const CasoForm = ()=> {
         })}
         error={!!errors.email}
         helperText={errors.email?.message}
-        disabled={estadoDeSolicutud == "cargando"}
+        disabled={isSubmitting || isSubmitSuccessful}
       />
-
       <TextField
         label="Teléfono"
         type="tel"
         {...register("telefono", { required: "El teléfono es obligatorio" })}
         error={!!errors.telefono}
         helperText={errors.telefono?.message}
-        disabled={estadoDeSolicutud == "cargando"}
+        disabled={isSubmitting || isSubmitSuccessful}
       />
-
       {/* Detalles */}
       <TextField
         label="Detalles de la solicitud"
         multiline
         rows={4}
-        disabled={estadoDeSolicutud == "cargando"}
+        disabled={isSubmitting || isSubmitSuccessful}
         {...register("detalles")}
       />
-
       {/* Botón */}
       <Button
         id="submit-button"
         type="submit"
         variant="contained"
-        disabled={!isValid || isSubmitting}
+        disabled={!isValid || isSubmitSuccessful}
       >
-        {estadoDeSolicutud === "cargando" ? "Cargando..." : "Guardar Caso"}
+        {isSubmitting ? "Cargando..." : "Guardar Caso"}
       </Button>
-    </Box>}
+    </Box>
     </>
   );
 }

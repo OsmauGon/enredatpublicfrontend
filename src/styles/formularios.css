@@ -32,9 +32,9 @@
     padding: 5px 0;
     
 }
-.startdate, .enddate, .fileinput{
+.input-sub{
     width: 100%;
-    border-bottom: 2px solid blue ;
+    border-bottom: 2px solid rgb(0, 255, 179) ;
     display: flex;
     justify-content: space-between;
 }

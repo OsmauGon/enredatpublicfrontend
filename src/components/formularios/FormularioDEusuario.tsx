@@ -100,7 +100,7 @@ export const UserForm = ({setRequestSuccess, setRequestError} :RequestSettings) 
       console.log(formData)
       
       
-      /*
+      /*//post request
       try {
         const response = await fetch(objetoo.endpoint, {
           method: objetoo.metodo,
@@ -121,17 +121,7 @@ export const UserForm = ({setRequestSuccess, setRequestError} :RequestSettings) 
       }
         */
       
-      /*navigate('/')
-      setUser({
-        id:100,
-        estado: "habilitado",
-        email: "mauricio@yahoo",
-        phone: "123456",
-        nombre: "mauricio",
-        disponible: true,
-        rol: "admin",
-        password: "12345678"
-      })*/
+      /*navigate('/')*/
       const usuario = loginProtocol(data)
       if(requestType === "userLogin" && usuario && usuario.length > 0){
         console.log(usuario)

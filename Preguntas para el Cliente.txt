@@ -1,0 +1,3 @@
+*Ya estan creados los formularios para subir un Caso, un Evento o una Informacion util. Se sabe que hasta no estar habilitados por el administrador ninguno sera visible en la pagina ¿Quienes tendran permitido hacerlo?
+
+
