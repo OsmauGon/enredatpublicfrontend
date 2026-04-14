@@ -12,28 +12,39 @@ import { PageInfo } from './pages/PageInfo'
 import { PageLogreg } from './pages/PageLogreg'
 import { PageSup } from './pages/PageSup'
 import { UserProvider } from './contexts/UserProvider'
+import { CasoForm } from './components/formularios/FormularioDEcaso'
 
+ const conjuntouno = [
+        {id: 12,lable: "Acompañantes", link: "/ats", compo: <PageAco />},
+        {id: 13,lable: "Casos", link: "/casos", compo: <PageCases />},
+        {id: 14,lable: "Comunidad", link: "/comunidad", compo: <PageEvents />},
+        {id: 15,lable: "Info util", link: "/infoutil", compo: <PageInfo />},
+        {id: 16,lable: "Supervision", link: "/supervision", compo: <PageSup />},
+        {id: 16,lable: "Supervision", link: "/login", compo: <PageLogreg />},
+        {id: 19,lable: "Nuevo Caso", link: "/newcase", compo: <PageAco />},
+        {id: 20,lable: "Nuevo Evento", link: "/newevent", compo: <PageAco />},
+        {id: 21,lable: "Nueva Informacion", link: "/newinfo", compo: <PageAco />},
+        //{id: 22,lable: "Editar cuenta", link: "/useredit", compo: <PageEdit />},
+    ]
 function App() {
-  
-
-  return (
+    return (
     <>
         <UserProvider>
         <Haeder></Haeder>
         <main>
             <Routes>
                 <Route index path="/" element={<PageHome />} />
-                <Route path="/ats" element={<PageAco />} />
-                <Route path="/casos" element={<PageCases/>} />
-                <Route path="/comunidad" element={<PageEvents />} />
-                <Route path="/infoutil" element={<PageInfo />} />
-                <Route path="/login" element={<PageLogreg />} />
-                <Route path="/supervision" element={<PageSup />} />
+                {conjuntouno.map(e=> (<Route key={e.id} path={e.link} element={e.compo}/>))}                
+                
                 
                 {/*}
                 <Route path="/supervision" element={<PageSupervision />} />
                 <Route path="/form" element={<Login />} />               
                 */}
+                <Route path="/newcase" element={<CasoForm />} />
+                {/* <Route path="/newevent" element={<PageLogreg />} /> */}
+                {/*<Route path="/newinfo" element={<PageSup />} /> */}
+                {/*<Route path="/useredit" element={<PageSup />} /> */}
             </Routes>
         </main> 
         <Footer></Footer>
