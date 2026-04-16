@@ -4,7 +4,7 @@ import type { User } from '../types/elements-pages';
 
 export type UserContextType = {
   user: User | null;
-  setUser: (user: User) => void;
+  setUser: (user: User | null) => void;
 };
 
 export const UserContext = createContext<UserContextType | undefined>(undefined);

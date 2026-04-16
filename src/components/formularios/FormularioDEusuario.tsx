@@ -17,7 +17,6 @@ type RequestSettings = {
 type UserFormType = {
   email: string;
   password: string;
-
   passwordConfirm: string;
   name?: string;
   phone?: string;
