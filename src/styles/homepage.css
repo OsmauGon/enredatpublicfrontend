@@ -1,0 +1,13 @@
+@import '../main-styles.css';
+
+#enredat-home {}
+#enredat-home .main-view{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main-view img{
+    border-radius: 10px;
+    width: 30%;
+}

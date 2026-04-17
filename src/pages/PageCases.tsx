@@ -52,7 +52,7 @@ useEffect(() => {
         <FilterBar palabraClave='diagnostico' filtros={filtros} onChange={setFiltros}></FilterBar>
         {loading && <p>Cargando...</p>}
         {error && <p>{error}</p>}
-        {(registrosFiltrados.length > 0 && !mockobjet) ?  <GridContainer items={registrosFiltrados} setMockobject={setMockobjet}/> : ""}
+        {(registrosFiltrados.length > 0 && !mockobjet) ?  <GridContainer items={registrosFiltrados} setMockobject={setMockobjet} opsiones={["Ver mas","Tomado"]}/> : ""}
         {mockobjet && <MockObject item={mockobjet} setMockobject={setMockobjet}></MockObject>}
       
     </section>

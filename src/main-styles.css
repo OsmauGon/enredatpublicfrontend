@@ -30,6 +30,8 @@ main{
 }
 main section{
     background-color: var(--blancoDELlogo);
+    margin-bottom: 2px;
+    height: 100%;
 }
 main section h2{
     margin: 0;

@@ -5,9 +5,10 @@ import type { Case, Event, Info, User } from "../../types/elements-pages"
 type GridContainerProps = {
   items: User[] | Case[] | Event[] | Info[];
   setMockobject: (val: User | Case | Event | Info | null)=>void
+  opsiones: string[]
 }
 
-export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobject }) => {
+export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobject, opsiones }) => {
   const nameAdapter = (name: string, titl: string)=>{
     return `${titl[0]}${titl[1]}${titl[2]}. ${name}`
   }
@@ -44,7 +45,7 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
             }
           </div>
 
-          <button className='grid-item-button' disabled={!item.disponible} onClick={()=>{setMockobject(item)}}>{item.disponible ? "Conectar" : "Ocupado"}</button>
+          <button className='grid-item-button' disabled={!item.disponible} onClick={()=>{setMockobject(item)}}>{item.disponible ? opsiones[0] : opsiones[1]}</button>
         </div>
       ))}
     </div>
