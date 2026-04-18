@@ -12,7 +12,7 @@ export const PageNewCase = () => {
   
   return (
     <section>
-        <h2>NewCase Page</h2>
+        <h2>Cargar nuevo caso</h2>
 
         <Box  sx={{maxWidth: 400, mx: "auto"}}>
         {!requestSuccess && <CaseForm setRequestSuccess={setRequestSuccess} setRequestError={setRequestError}/>}

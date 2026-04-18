@@ -12,7 +12,7 @@ export const PageEdit = () => {
   const [requestError, setRequestError] =  useState<string | null>(null)
   return (
     <section>
-        <h2>PageLogreg</h2>
+        {/* <h2>PageLogreg</h2> */}
         {!requestSuccess && <EditForm setRequestSuccess={setRequestSuccess} setRequestError={setRequestError}/>}
         <Box  sx={{maxWidth: 400, mx: "auto"}}>
 

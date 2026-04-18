@@ -6,14 +6,19 @@ import { MockObject } from '../components/reusables/MockObject'
 import { FilterBar } from '../components/reusables/FilterBar'
 import { allusersget } from '../endpoints/users-endpoints'
 
+type filtrosType = {
+  nombre: string;
+  disponible: boolean;
+  esSupervisor?: boolean;
 
+}
 
 export const PageAco = () => {
   const [acompas, setAcompas] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
-  const [filtros, setFiltros] = useState({ nombre: "", disponible: false, esSupervisor: false });  
+  const [filtros, setFiltros] = useState<filtrosType>({ nombre: "", disponible: false, esSupervisor: false });  
   
   const registrosFiltrados = acompas.filter((r) => {
     const matchNombre = r.nombre
@@ -35,7 +40,7 @@ export const PageAco = () => {
         setAcompas(data)
       } catch (err) {
         console.log(err)
-        setError('Error al cargar datos desde backend, usando fallback local')
+        setError('Los siguientes son datos ficticios no reales de especialistas terapéuticos')
         // Fallback: filtrar los datos simulados
         const profesionales = allusers.filter(user => user.rol === "profesional")
         setAcompas(profesionales)
@@ -49,7 +54,7 @@ export const PageAco = () => {
 
   return (
     <section>
-      <h2>PageAco</h2>
+      {/* <h2>PageAco</h2> */}
       <FilterBar palabraClave='nombre' filtros={filtros} onChange={setFiltros}></FilterBar>
       {loading && <p>Cargando...</p>}
       {error && <p>{error}</p>}

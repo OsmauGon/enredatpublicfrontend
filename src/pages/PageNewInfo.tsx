@@ -12,7 +12,7 @@ export const PageNewInfo = () => {
   
   return (
     <section>
-        <h2>NewInfot Page</h2>
+        <h2>Cargar informacion para compartirs</h2>
 
         <Box  sx={{maxWidth: 400, mx: "auto"}}>
         {!requestSuccess && <InfoForm setRequestSuccess={setRequestSuccess} setRequestError={setRequestError}/>}

@@ -33,7 +33,7 @@ useEffect(() => {
           setCases(data)
         } catch (err) {
           console.log(err)
-          setError('Error al cargar datos desde backend, usando fallback local')
+          setError('Los siguientes son datos ficticios no reales de casos terapéuticos')
           // Fallback: filtrar los datos simulados
           const profesionales = allcases.filter((caso: Case) => caso.estado === "habilitado")
           setCases(profesionales)
@@ -48,7 +48,7 @@ useEffect(() => {
   
   return (
     <section>
-        <h2>PageCasos</h2>
+        {/* <h2>PageCasos</h2> */}
         <FilterBar palabraClave='diagnostico' filtros={filtros} onChange={setFiltros}></FilterBar>
         {loading && <p>Cargando...</p>}
         {error && <p>{error}</p>}

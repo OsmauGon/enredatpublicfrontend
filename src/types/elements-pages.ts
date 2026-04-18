@@ -54,5 +54,7 @@ export type Info = {
     subtitulos: string[];
     textos: string[];
     images?: string[];
-    infoType: "lista" | "no-lista"
+    infoType: "lista" | "no-lista";
+    mainImage?: string;
+    mainFile?: string;
 }

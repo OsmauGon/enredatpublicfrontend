@@ -7,10 +7,7 @@ export const allinfo: Info[] =[
         titulo: "The Dark Tower",
         subtitulos:["The Gunslinger","The Drawing of the Three","The Waste Lands","Wizard and Glass"],
         textos:[
-            "(1982) (en España La Torre Oscura I: El pistolero, también conocida como La hierba del diablo)",
-            "(1987) (La Torre Oscura II: La llegada de los tres, también conocida como La invocación) La trama de esta novela tiene su inicio unas 7 horas después del final de La Torre Oscura I: El pistolero",
-            "(1991) (La Torre Oscura III: Las Tierras Baldías) La trama comienza 5 semanas después de la conclusión de La Torre Oscura II: La llegada de los tres",
-            "(1997) (La Torre Oscura IV: Mago y Cristal, también conocida como La bola de cristal) La trama se inicia inmediatamente después del final de La Torre Oscura III: Las Tierras Baldías",
+            "Torre Oscura I: El pistolero, también conocida como La hierba del diablo). La Torre Oscura II: La llegada de los tres, también conocida como La invocación) La trama de esta novela tiene su inicio unas 7 horas después del final de La Torre Oscura I: El pistolero. La Torre Oscura III: Las Tierras Baldías) La trama comienza 5 semanas después de la conclusión de La Torre Oscura II: La llegada de los tres. La Torre Oscura IV: Mago y Cristal, también conocida como La bola de cristal) La trama se inicia inmediatamente después del final de La Torre Oscura III: Las Tierras Baldías",
         ],
         disponible: true,
 

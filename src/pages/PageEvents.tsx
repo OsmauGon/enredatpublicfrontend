@@ -33,7 +33,7 @@ export const PageEvents = () => {
             setEvents(data)
           } catch (err) {
             console.log(err)
-            setError('Error al cargar datos desde backend, usando fallback local')
+            setError('Los siguientes son datos ficticios no reales de eventos, talleres o gurpos terapéuticos')
             // Fallback: filtrar los datos simulados
             const profesionales = allevents.filter(user => user.estado === "habilitado")
             setEvents(profesionales)

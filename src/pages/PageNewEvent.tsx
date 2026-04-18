@@ -11,7 +11,7 @@ export const PageNewEvent = () => {
   
   return (
     <section>
-        <h2>NewEvent Page</h2>
+        <h2>Cargar nuevo evento</h2>
 
         <Box  sx={{maxWidth: 400, mx: "auto"}}>
         {!requestSuccess && <EventForm setRequestSuccess={setRequestSuccess} setRequestError={setRequestError}/>}

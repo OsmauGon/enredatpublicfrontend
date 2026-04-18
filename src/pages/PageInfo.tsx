@@ -32,7 +32,7 @@ export const PageInfo = () => {
             setInfo(data)
           } catch (err) {
             console.log(err)
-            setError('Error al cargar datos desde backend, usando fallback local')
+            setError('Los siguientes son datos ficticios no reales de informacion compartida')
             // Fallback: filtrar los datos simulados
             const profesionales = allinfo.filter((caso: Info) => caso.estado === "habilitado")
             setInfo(profesionales)
@@ -46,7 +46,7 @@ export const PageInfo = () => {
   
   return (
     <section>
-        <h2>PageInfo</h2>
+       {/*  <h2>PageInfo</h2> */}
         <FilterBar palabraClave='titulo' filtros={filtros} onChange={setFiltros}></FilterBar>
       {loading && <p>Cargando...</p>}
       {error && <p>{error}</p>}
