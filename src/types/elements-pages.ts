@@ -53,8 +53,10 @@ export type Info = {
     titulo: string;
     subtitulos: string[];
     textos: string[];
-    images?: string[];
-    infoType: "lista" | "no-lista";
-    mainImage?: string;
-    mainFile?: string;
+    resumen?: string;//no estoy seguro
+    images?: string[];//probablemente se elimine
+    infoType: "lista" | "no-lista";//probablemente se elimine
+    mainImage?: string;//url de la imagen que puede der visible para el usuario
+    mainFile?: string;//url del documento que vera el usuario para leer
+    downloadDocument?: string;//url del documento que el usuario podria descargar
 }

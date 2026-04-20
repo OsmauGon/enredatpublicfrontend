@@ -17,7 +17,7 @@ export const PageInfo = () => {
       const matchNombre = r.titulo
         .toLowerCase()
         .includes(filtros.nombre.toLowerCase());
-      const matchDisponible = filtros.disponible ? r.estado : true;
+      const matchDisponible = filtros.disponible ? r.disponible : true;
       return matchNombre && matchDisponible;
   });
   useEffect(() => {

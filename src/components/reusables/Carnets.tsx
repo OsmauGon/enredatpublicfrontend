@@ -21,6 +21,15 @@ type EventProps = {
 type InfoProps = {
   props: Info
 }
+const handleDownload = (elurl?: string) => {
+  if(!elurl) return
+  const url = elurl; // aquí debería venir la URL del PDF
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "documento.pdf"; // nombre sugerido
+  link.click();
+};
+
 
 export const CarnetUsuario: React.FC<UserProps> = ({
   nombre,
@@ -103,7 +112,7 @@ export const CaseCarnet = (props: CaseProps) => {
 }
 export const EventCarnet = (props: EventProps) => {
   return (
-    <div className='carnet case-carnet'>
+    <div className='carnet event-carnet'>
         
     <Box
       sx={{
@@ -126,9 +135,9 @@ export const EventCarnet = (props: EventProps) => {
 }
 export const InfoCarnet = (props: InfoProps) => {
   return (
-  <div className='carnet case-carnet'>
+  <div className='carnet info-carnet'>
         
-    {/* <Box
+    <Box
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -139,13 +148,10 @@ export const InfoCarnet = (props: InfoProps) => {
         backgroundColor: "#2F9597",
       }}
     >
-
-    </Box> */}
-    <div style={{background: "rgba(0,0,0,.8)", border: "1px solid #ccc", padding: "16px", borderRadius: "8px" }}>
       {/* Título principal */}
       <h2 style={{textAlign: "center"}}>{props.props.titulo}</h2>
-
-      {/* Renderizado de subtítulos y textos */}
+      
+      {/* Renderizado de subtítulos y textos 
       {props.props.subtitulos.map((subtitulo, index) => (
         <><div key={index} style={{ marginBottom: "12px" }}>
           <h4>
@@ -158,9 +164,14 @@ export const InfoCarnet = (props: InfoProps) => {
           }
         </div>
         <hr />
+        
         </>
-      ))}
-    </div>
+      ))}*/}
+      <p>{props.props.textos}</p>
+      
+      {props.props.downloadDocument && <button className="btn btn-success" onClick={()=>handleDownload(props.props.downloadDocument)}>Descargar PDF</button>}
+    </Box> 
+    
   </div>
   )
 }

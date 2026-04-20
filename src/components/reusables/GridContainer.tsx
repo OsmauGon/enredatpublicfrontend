@@ -39,6 +39,7 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
               </>)}
             {"textos" in item &&(<>
               <h5>{item.titulo}</h5>
+              <p>{item.id}</p>
               <p className='mini-text'>{item.subtitulos.join(" | ")}</p>
             </>)
 

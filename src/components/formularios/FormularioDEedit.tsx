@@ -20,6 +20,7 @@ type UserFormType = {
   name?: string;
   phone?: string;
 
+  disponible: string;
   title: string;
   profileImage?: FileList | null;
   //title?: "" | "Acompañante Terapéutico" | "Licenciad@" | "Tecnico Superior";
@@ -148,25 +149,44 @@ export const EditForm = ({setRequestSuccess, setRequestError} :RequestSettings) 
             <TextField className="logreg-campo" label="Contraseña" type= "password" {...register("password", { required: "Contraseña obligatoria" })} disabled={isSubmitting} required></TextField>
             <TextField className="logreg-campo" label="Confirme su contraseña" type= "password" {...register("passwordConfirm", { required: "Confirmacion obligatoria" })} disabled={isSubmitting} required></TextField> 
         </div>
-        <div className="terapeuts-inputs inputs-container">  
-            <FormControl fullWidth className='logreg-campo title-input'>
-            <InputLabel id="title-label">Título</InputLabel>
-            <Controller
-              control={control}
-              name="title"
-              rules={{ required: "Indique su título" }}
-              render={({ field }) => (
-              <Select {...field} labelId="title-label" label="Título" disabled={isSubmitting}>
-                  <MenuItem value=""></MenuItem>
-                  <MenuItem value="Acompañante terapéutico">Acompañante terapéutico</MenuItem>
-                  <MenuItem value="Tecnico">Tecnico</MenuItem>
-                  <MenuItem value="Licenciado">Licenciado</MenuItem>
-                  <MenuItem value="Tecnico Superior">Tecnico Superior</MenuItem>
-               </Select>
-                )}
-            />
-            </FormControl>
+        <div className="terapeuts-inputs inputs-container">
+            
             {user && user.rol === "profesional" && <>
+            
+                    <FormControl fullWidth className='logreg-campo title-input'>
+                    <InputLabel id="title-label">Título</InputLabel>
+                    <Controller
+                      control={control}
+                      name="title"
+                      rules={{ required: "Indique su título" }}
+                      render={({ field }) => (
+                      <Select {...field} labelId="title-label" label="Título" disabled={isSubmitting}>
+                          <MenuItem value=""></MenuItem>
+                          <MenuItem value="Acompañante terapéutico">Acompañante terapéutico</MenuItem>
+                          <MenuItem value="Tecnico">Tecnico</MenuItem>
+                          <MenuItem value="Licenciado">Licenciado</MenuItem>
+                          <MenuItem value="Tecnico Superior">Tecnico Superior</MenuItem>
+                      </Select>
+                        )}
+                    />
+                    </FormControl>
+                      
+                    <FormControl fullWidth className='logreg-campo title-input'>
+                    <InputLabel id="title-label">Disponibilidad</InputLabel>
+                    <Controller
+                      control={control}
+                      name="disponible"
+                      rules={{ required: false }}
+                      render={({ field }) => (
+                      <Select {...field} labelId="title-label" label="Estoy" disabled={isSubmitting}>
+                          <MenuItem value="Acompañante terapéutico">Disponible</MenuItem>
+                          <MenuItem value="Tecnico">Ocupado</MenuItem>
+                      </Select>
+                        )}
+                    />
+                    </FormControl>
+
+                    
                 <div className="file-inputs">
                     <Button variant="contained" className="user-file-input1" component="label" disabled={isSubmitting}>
                     Foto de perfil
