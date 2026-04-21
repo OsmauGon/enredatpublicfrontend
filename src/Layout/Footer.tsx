@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
     >
       {/* Redes sociales */}
       <Box sx={{ marginTop: ".5rem" }}>
-        {/* <IconButton href="https://facebook.com" target="_blank">
+        <IconButton href="https://facebook.com" target="_blank">
           <FacebookIcon />
         </IconButton>
         <IconButton href="https://instagram.com" target="_blank">
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
         >
           <WhatsAppIcon />
         </IconButton>
-          */}
+         
       </Box>
 
       {/* Derechos reservados */}

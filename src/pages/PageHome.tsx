@@ -1,6 +1,6 @@
 
 import '../styles/homepage.css'
-import {MotionSlogan} from '../components/MotionSlogan'
+//import {MotionSlogan} from '../components/MotionSlogan'
 import { Box, Button, Card, CardContent, Grid, Typography } from '@mui/material';
 
 const eslogans = [
@@ -49,7 +49,7 @@ export const PageHome = ()=> {
         </Typography>
         <Grid container spacing={3} justifyContent="center">
           {eslogans.map((servicio) => (
-            <Grid  xs={12} md={4} key={servicio.id}>
+            <Grid   key={servicio.id}>
               <Card>
                 <CardContent>
                   <Typography variant="h6">{servicio.title}</Typography>

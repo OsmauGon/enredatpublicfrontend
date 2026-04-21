@@ -12,6 +12,7 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user1.png",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "admin",
+        esSupervisor: false,
         titulo: "Acompañante terapéutico"
     },
     {
@@ -41,6 +42,7 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user3.webp",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
+        esSupervisor: false,
         titulo: "Tecnicx"
     },
     {
@@ -55,6 +57,7 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user4.png",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
+        esSupervisor: false,
         titulo: "Tecnicx Superior"
     },
     {
@@ -69,6 +72,7 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user5.png",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
+        esSupervisor: false,
         titulo: "Acompañante terapéutico"
     },
     {
@@ -83,6 +87,7 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user6.jpeg",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
+        esSupervisor: false,
         titulo: "Licenciadx"
     },
     {
@@ -97,6 +102,7 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user7.png",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
+        esSupervisor: false,
         titulo: "Tecnicx"
     },
     {
@@ -111,6 +117,7 @@ export const allusers: User[] = [
         profileImage: "/Recursos simulados/File Container/user8.png",
         mainImage: "/Recursos simulados/File Container/titulo.jpg",
         rol: "profesional",
+        esSupervisor: false,
         titulo: "Tecnicx Superior"
     },
     {
