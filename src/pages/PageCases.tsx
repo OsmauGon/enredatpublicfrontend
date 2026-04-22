@@ -1,18 +1,22 @@
 import {useEffect, useState} from 'react'
 import type {Case, Event, Info, User} from '../types/elements-pages'
-import {allcases} from '../../Recursos simulados/casesDataBase'
+import {allcases} from '../../public/Recursos simulados/casesDataBase'
 import {GridContainer} from '../components/reusables/GridContainer'
 import { MockObject } from '../components/reusables/MockObject'
 import { FilterBar } from '../components/reusables/FilterBar'
 
+type filtrosType = {
+  nombre: string;
+  disponible?: boolean;
 
+}
 
 export const PageCases = () => {
 const [cases, setCases] = useState<Case[]>([])
 const [loading, setLoading] = useState(true)
 const [error, setError] = useState<string | null>(null)
 const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
-const [filtros, setFiltros] = useState({ nombre: "", disponible: false });  
+const [filtros, setFiltros] = useState<filtrosType>({ nombre: "", disponible: false });  
 
 const registrosFiltrados = cases.filter((r) => {
     const matchNombre = r.dx
@@ -52,7 +56,7 @@ useEffect(() => {
         <FilterBar palabraClave='diagnostico' filtros={filtros} onChange={setFiltros}></FilterBar>
         {loading && <p>Cargando...</p>}
         {error && <p>{error}</p>}
-        {(registrosFiltrados.length > 0 && !mockobjet) ?  <GridContainer items={registrosFiltrados} setMockobject={setMockobjet} opsiones={["Ver mas","Tomado"]}/> : ""}
+        {(registrosFiltrados.length > 0 && !mockobjet) ?  <GridContainer items={registrosFiltrados} setMockobject={setMockobjet} opsiones={["+ Info","Tomado"]}/> : ""}
         {mockobjet && <MockObject item={mockobjet} setMockobject={setMockobjet}></MockObject>}
       
     </section>

@@ -1,9 +1,10 @@
-import { allusers } from "../../Recursos simulados/usersDataBase"
+import { allusers } from "../../public/Recursos simulados/usersDataBase";
+import type { User } from "../types/elements-pages";
 
 type loginUser = {email: string;password: string;}
 export const loginProtocol =(recurso :loginUser)=>{
     //search in simulated database * buscar en base de datos simulada
-    const user = allusers.filter(i => i.email === recurso.email && i.password === recurso.password);
+    const user: User[] = allusers.filter(i => i.email === recurso.email && i.password === recurso.password);
     if(user.length > 0){ return user }
     //If it's not in the simulated database, we look in localStorage. * si no hay en base de datos simulada, buscamos en localStorage
     const localUserStr = localStorage.getItem("enredat-user");

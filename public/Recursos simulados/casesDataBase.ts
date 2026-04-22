@@ -1,4 +1,4 @@
-import type {Case} from '../src/types/elements-pages'
+import type {Case} from '../../src/types/elements-pages'
 export const allcases: Case[]  = [
     {
         id: 1 ,

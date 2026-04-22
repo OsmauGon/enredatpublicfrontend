@@ -102,7 +102,8 @@ export const CaseCarnet = (props: CaseProps) => {
         <p><b>Disponible: </b>{props.props.disponible ? 'Disponible' : 'Tomado'}</p>
         <p><b>Diagnostico: </b>{props.props.dx}</p>
         <p><b>Edad: </b>{props.props.tipoPaciente} de {props.props.edad} años</p>
-        <p><b>Contacto: </b>{props.props.contacto.join("-")}</p>
+        <p><b>Email de contacto: </b>{props.props.contacto[0]}</p>
+        <p><b>Teléfono de contacto: </b>{props.props.contacto[1]}</p>
         <p><b>Covertura: </b>{props.props.covertura}</p>
         <p><b>Franja Horaria: </b>{props.props.franjahoraria}</p>
         <p><b>Solicitud: </b>{props.props.solicitud}</p>

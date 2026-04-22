@@ -1,4 +1,4 @@
-import type {Event} from '../src/types/elements-pages'
+import type {Event} from '../../src/types/elements-pages'
 export const allevents: Event[] = [
     {
         id: 1,

@@ -162,7 +162,7 @@ export const UserForm = ({setRequestSuccess, setRequestError} :RequestSettings) 
         <TextField className="logreg-campo" label="Contraseña" type= "password" {...register("password", { required: "Contraseña obligatoria" })} disabled={isSubmitting} required></TextField>
         { requestType !== "userLogin"
         ? <><TextField className="logreg-campo" label="Confirme su contraseña" type= "password" {...register("passwordConfirm", { required: "Confirmacion obligatoria" })} disabled={isSubmitting} required></TextField> 
-          <div id="checkbox-container"><label>Soy terapéuta</label><input type="checkbox" onClick={()=>{if (requestType === "userRegister") setRequestType("atRegister"); else setRequestType("userRegister")}} /></div></>
+          <div id="checkbox-container"><label>Deseo registrarme como profesional</label><input type="checkbox" onClick={()=>{if (requestType === "userRegister") setRequestType("atRegister"); else setRequestType("userRegister")}} /></div></>
         : ""
         
         }

@@ -1,4 +1,4 @@
-import type {User} from '../src/types/elements-pages'
+import type {User} from '../../src/types/elements-pages'
 export const allusers: User[] = [
     {
         id: 1,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Case, Event, Info, User } from '../types/elements-pages'
-import {allusers} from '../../Recursos simulados/usersDataBase'
+import {allusers} from '../../public/Recursos simulados/usersDataBase'
 import {GridContainer} from '../components/reusables/GridContainer'
 import { MockObject } from '../components/reusables/MockObject'
 import { FilterBar } from '../components/reusables/FilterBar'
@@ -8,7 +8,7 @@ import { allusersget } from '../endpoints/users-endpoints'
 
 type filtrosType = {
   nombre: string;
-  disponible: boolean;
+  disponible?: boolean;
   esSupervisor?: boolean;
 
 }

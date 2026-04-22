@@ -1,4 +1,4 @@
-import { allusers } from "../../Recursos simulados/usersDataBase"
+import { allusers } from "../../public/Recursos simulados/usersDataBase";
 import type { User } from "../types/elements-pages";
 
 type registerUser = {
@@ -9,7 +9,7 @@ type registerUser = {
 }
 
 export const registerProtocol =(recurso: registerUser)=>{
-    const user = allusers.filter(i => i.email === recurso.email && i.password === recurso.password);
+    const user: User[] = allusers.filter(i => i.email === recurso.email && i.password === recurso.password);
 
     if(user.length > 0){
         return false

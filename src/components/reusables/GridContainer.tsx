@@ -46,7 +46,7 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
             }
           </div>
 
-          <button className='grid-item-button' disabled={!item.disponible} onClick={()=>{setMockobject(item)}}>{item.disponible ? opsiones[0] : opsiones[1]}</button>
+          <button className='grid-item-button'  onClick={()=>{setMockobject(item)}}>{item.disponible ? opsiones[0] : opsiones[1]}</button>
         </div>
       ))}
     </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Case, Event, Info, User } from '../types/elements-pages'
-import {allusers} from '../../Recursos simulados/usersDataBase'
+import {allusers} from '../../public/Recursos simulados/usersDataBase'
 import {GridContainer} from '../components/reusables/GridContainer'
 import { MockObject } from '../components/reusables/MockObject'
 import { FilterBar } from '../components/reusables/FilterBar'
@@ -8,8 +8,6 @@ import { allusersget } from '../endpoints/users-endpoints'
 
 type filtrosType = {
   nombre: string;
-  disponible: boolean;
-  esSupervisor?: boolean;
 
 }
 
@@ -18,15 +16,13 @@ export const PageSup = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [mockobjet,setMockobjet] = useState<User |Case | null | Event | Info>(null)
-  const [filtros, setFiltros] = useState<filtrosType>({ nombre: "", disponible: false, esSupervisor: false });  
+  const [filtros, setFiltros] = useState<filtrosType>({ nombre: "", });  
   
   const registrosFiltrados = acompas.filter((r) => {
     const matchNombre = r.nombre
       .toLowerCase()
       .includes(filtros.nombre.toLowerCase());
-    const matchDisponible = filtros.disponible ? r.disponible : true;
-    const marchSupervisor = filtros.esSupervisor ? r.esSupervisor : true;
-    return matchNombre && matchDisponible && marchSupervisor;
+    return matchNombre
   });
    useEffect(() => {
     const fetchProfesionales = async () => {

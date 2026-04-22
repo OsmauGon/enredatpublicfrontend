@@ -1,4 +1,4 @@
-import type {Info} from '../src/types/elements-pages'
+import type {Info} from '../../src/types/elements-pages'
 
 export const allinfo: Info[] =[
     {
