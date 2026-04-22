@@ -126,7 +126,7 @@ export const CaseForm = ({setRequestSuccess, setRequestError} :RequestSettings)=
       />
       {/* Tipo de paciente */}
       <FormControl>
-        <InputLabel>Tipo de paciente</InputLabel>
+        <InputLabel>Rango Etareo</InputLabel>
         <Controller
           name="tipoPaciente"
           control={control}
