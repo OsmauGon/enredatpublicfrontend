@@ -37,6 +37,7 @@ export const Haeder = () => {
         localStorage.removeItem("enredt-user")
         setUser(null)
         navigate('/')
+        setPage(true)
     }
   return (
     <header>

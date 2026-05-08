@@ -11,3 +11,13 @@
     border-radius: 10px;
     width: 30%;
 }
+
+.hero-section h3{
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+.hero-section h4{
+    font-size: clamp(1rem, 3vw, 2rem);
+}
+.hero-section h6{
+    font-size: clamp(.5rem, 5vw, 1rem);
+}

@@ -11,7 +11,7 @@ const eslogans = [
 
 export const PageHome = ()=> {
   return (
-    <Box>
+    <Box className="hero-section">
       {/* Hero Section */}
       <Box sx={{
           
