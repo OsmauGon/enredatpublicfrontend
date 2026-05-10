@@ -21,7 +21,7 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
           {/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/}
           <div className="grid-item-content">
             {"nombre" in item && "titulo" in item && (<h5 className='grid-item-title'>{nameAdapter(item.nombre,item.titulo ? item.titulo : "")}</h5>)}
-            {"tipoPaciente" in item && "edad" in item && (<h4 className='grid-item-title'>{item.tipoPaciente} de {item.edad} años</h4>)}
+            {"tipoPaciente" in item && "edad" in item && (<h5 className='grid-item-title'>{item.tipoPaciente} de {item.edad} años</h5>)}
             
             
             {/*<p>{item.disponible ? "disponible" : "ocupado"}</p>*/}
@@ -38,15 +38,19 @@ export const GridContainer: React.FC<GridContainerProps> = ({ items, setMockobje
               <img className={`mini-image ${item.disponible ? "" : 'nodisponible'}`} src={item.mainImage} alt="Evento" />
               </>)}
             {"textos" in item &&(<>
-              <h5>{item.titulo}</h5>
-              <p>{item.id}</p>
+              <h6>{item.titulo}</h6>
+              <p>id: {item.id}</p>
               <p className='mini-text'>{item.subtitulos.join(" | ")}</p>
             </>)
 
             }
           </div>
 
-          <button className='grid-item-button'  onClick={()=>{setMockobject(item)}}>{item.disponible ? opsiones[0] : opsiones[1]}</button>
+          <button 
+            className='grid-item-button'  
+            onClick={()=>{setMockobject(item)}}
+            title='Mas info'
+            >{item.disponible ? opsiones[0] : opsiones[1]}</button>
         </div>
       ))}
     </div>

@@ -4,6 +4,7 @@ import {GridContainer} from '../components/reusables/GridContainer'
 import { MockObject } from '../components/reusables/MockObject'
 import { FilterBar } from '../components/reusables/FilterBar'
 import type { Case, Event, Info, User } from '../types/elements-pages'
+import { sortByNearestDate } from '../servicios/sortByNearestDate'
 
 type filtrosType = {
   nombre: string;
@@ -33,14 +34,15 @@ export const PageEvents = () => {
             const response = await fetch('/api/users') // tu endpoint real
             const data: Event[] = await response.json()
             if (!response.ok) throw new Error('Error en la respuesta del servidor')
-    
-            setEvents(data)
+            const ordenados = sortByNearestDate(data);
+            setEvents(ordenados)
           } catch (err) {
             console.log(err)
             setError('Los siguientes son datos ficticios no reales de eventos, talleres o gurpos terapéuticos')
             // Fallback: filtrar los datos simulados
             const profesionales = allevents.filter(user => user.estado === "habilitado")
-            setEvents(profesionales)
+            const ordenados = sortByNearestDate(profesionales);
+            setEvents(ordenados)
           } finally {
             setLoading(false)
           }
