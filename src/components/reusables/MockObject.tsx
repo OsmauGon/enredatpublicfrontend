@@ -1,7 +1,7 @@
-import React from 'react'
+
 import '../../styles/mockobject.css'
 import type { Case, Event, Info, User } from '../../types/elements-pages';
-import { CarnetUsuario } from './Carnets';
+import { UserCarnet } from './Carnets';
 import { CaseCarnet, EventCarnet, InfoCarnet } from './Carnets';
 
 
@@ -16,7 +16,7 @@ export const MockObject: React.FC<GridContainerProps> = ({ item, setMockobject }
     <div className='mockobject'>
         <button className='mockobject-button' onClick={()=> setMockobject(null)}>⬅️ Volver</button>
         <div className="mockobject-content">
-        {"nombre" in item && ( //objeto User
+        {/*"nombre" in item && ( //objeto User
                                 <CarnetUsuario nombre={item.nombre}
                                 titulo={item.titulo}
                                 especialidad={item.rangoEtareo}
@@ -25,7 +25,9 @@ export const MockObject: React.FC<GridContainerProps> = ({ item, setMockobject }
                                 //fotoTitulo={item.mainImage}
                                 fotoUsuario={item.profileImage}
                                 />)
-        }
+        */}
+        {"nombre" in item && ( //objeto User
+          <UserCarnet props={item}/>)}
         {"dx" in item && ( //objeto Case
           <CaseCarnet props={item}/>)}
         {"description" in item && ( //objeto Event

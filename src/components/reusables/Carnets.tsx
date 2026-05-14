@@ -1,7 +1,9 @@
 
-import { Avatar, Box, Typography } from '@mui/material'
-import type { Case, Event, Info } from '../../types/elements-pages'
+import { Avatar, Box, IconButton, Typography } from '@mui/material'
+import type { Case, Event, Info, User } from '../../types/elements-pages'
 import { useState } from 'react';
+import EmailIcon from "@mui/icons-material/Email";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 interface UserProps {
   nombre: string;
@@ -11,6 +13,9 @@ interface UserProps {
   contacto: string;
   fotoUsuario?: string; // URL o base64
   //fotoTitulo?: string;  // URL o base64
+}
+type UseerProps = {
+  props: User,
 }
 type CaseProps = {
     props: Case
@@ -81,6 +86,53 @@ export const CarnetUsuario: React.FC<UserProps> = ({
     </Box>
   );
 };
+
+export const UserCarnet = (props: UseerProps) =>{
+  console.log(props)
+  return (
+    <div className='carnet user-carnet'>
+        
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        border: "12px double #FBF6F3",
+        borderRadius: "8px",
+        padding: 1,
+        width: 400,
+        overflow: "hidden"
+      }}
+    >
+        <div className="user-avatar">
+          <img src={props.props.profileImage} alt={props.props.nombre} />
+          <p>Id: {props.props.id}</p>
+        </div>
+        <div className="user-info">
+          
+          <img src="/img/carnet-logo.png" alt="" />
+          <div className="info-container">
+            <h6>{props.props.titulo}</h6>
+            <h5>{props.props.nombre}</h5>
+            <p>Estado: {props.props.disponible ? "disponible" : "ocupado"}</p>
+            <p>Aréa: {props.props.rangoEtareo}</p>
+          </div>
+          <div className="info-links">
+            <IconButton href={`mailto:${props.props.email}`}>
+              <EmailIcon />
+            </IconButton>
+            <IconButton 
+                      href={`https://wa.me/549${props.props.phone}`} // reemplaza con tu número real
+                      target="_blank"
+            >
+              <WhatsAppIcon />
+            </IconButton>
+          </div>
+        </div>
+    </Box>
+    </div>
+  )
+}
 export const CaseCarnet = (props: CaseProps) => {
   return (
     <div className='carnet case-carnet'>

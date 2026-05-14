@@ -1,4 +1,7 @@
 @import '../../src/main-styles.css';
+:root{
+    --numero: 150px
+}
 
 .mockobject{/* 
     position: fixed;
@@ -89,3 +92,44 @@
         transition: .5s;
      }
      
+
+
+/**********************************************/
+/**************CARNETS*************************/
+/**********************************************/
+
+.carnet{
+    background: #2F9597;
+    background: linear-gradient(90deg, rgba(47, 149, 151, 1) 0%, rgba(229, 138, 85, 1) 50%, rgba(47, 149, 151, 1) 100%);        
+}
+.carnet .user-avatar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.carnet .user-avatar p{
+    text-align: center;
+    font-size: 24px;
+}
+.carnet .user-avatar img{
+    width: var(--numero);
+    height: var(--numero);
+    border-radius: 50%;
+}
+.carnet .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-container h6{
+    text-align: center;
+}
+.info-container p{
+    padding: 0;
+    margin: 0;
+}
+.carnet .user-info img{
+    width: calc(var(--numero)* .3);
+    height:  calc(var(--numero)* .3);
+    border-radius: 30%;
+}
